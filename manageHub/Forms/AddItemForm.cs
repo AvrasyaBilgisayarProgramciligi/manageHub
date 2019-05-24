@@ -24,13 +24,18 @@ namespace manageHub
         public static extern bool ReleaseCapture();
 
         //--------------------------------------DataBase---------------------------------------------
-        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = manageHubDb.accdb");
+        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = ../../Database/manageHubDb.accdb");
         //-------------------------------------------------------------------------------------------
 
         public AddItemForm(DashBoardForm dash)
         {
             InitializeComponent();
             this.dash = dash;
+        }
+
+        private void AddItemForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = bAddItem;
         }
 
         private void MainPanel_MouseDown(object sender, MouseEventArgs e)

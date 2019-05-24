@@ -36,7 +36,7 @@
             this.itemName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bAddItem = new MetroSet_UI.Controls.MetroSetButton();
+            this.bAddItem = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,28 +122,17 @@
             // 
             // bAddItem
             // 
-            this.bAddItem.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.bAddItem.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.bAddItem.DisabledForeColor = System.Drawing.Color.Gray;
+            this.bAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.bAddItem.FlatAppearance.BorderSize = 0;
+            this.bAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAddItem.Font = new System.Drawing.Font("Arial", 12F);
-            this.bAddItem.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.bAddItem.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.bAddItem.HoverTextColor = System.Drawing.Color.White;
+            this.bAddItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bAddItem.Location = new System.Drawing.Point(253, 111);
             this.bAddItem.Name = "bAddItem";
-            this.bAddItem.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.bAddItem.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.bAddItem.NormalTextColor = System.Drawing.Color.White;
-            this.bAddItem.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.bAddItem.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.bAddItem.PressTextColor = System.Drawing.Color.White;
             this.bAddItem.Size = new System.Drawing.Size(88, 32);
-            this.bAddItem.Style = MetroSet_UI.Design.Style.Light;
-            this.bAddItem.StyleManager = null;
-            this.bAddItem.TabIndex = 22;
+            this.bAddItem.TabIndex = 23;
             this.bAddItem.Text = "Add";
-            this.bAddItem.ThemeAuthor = "Narwin";
-            this.bAddItem.ThemeName = "MetroLite";
+            this.bAddItem.UseVisualStyleBackColor = false;
             this.bAddItem.Click += new System.EventHandler(this.BAddItem_Click);
             // 
             // AddItemForm
@@ -162,6 +151,7 @@
             this.Name = "AddItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Item";
+            this.Load += new System.EventHandler(this.AddItemForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,6 +167,6 @@
         private System.Windows.Forms.TextBox itemName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private MetroSet_UI.Controls.MetroSetButton bAddItem;
+        private System.Windows.Forms.Button bAddItem;
     }
 }

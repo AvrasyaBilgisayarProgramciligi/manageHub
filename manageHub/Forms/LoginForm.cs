@@ -30,7 +30,7 @@ namespace manageHub
         //-------------------------------------------------------------------------------------------
 
         //--------------------------------------DataBase---------------------------------------------
-        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = manageHubDb.accdb");
+        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = ../../Database/manageHubDb.accdb");
         //-------------------------------------------------------------------------------------------
 
         public LoginForm()

@@ -42,7 +42,7 @@ namespace manageHub
         //-------------------------------------------------------------------------------------------
 
         //--------------------------------------DataBase---------------------------------------------
-        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = manageHubDb.accdb");
+        OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = ../../Database/manageHubDb.accdb");
         //-------------------------------------------------------------------------------------------
 
         //-----------------------------------------API-----------------------------------------------
@@ -80,6 +80,19 @@ namespace manageHub
             staffBox.SelectedIndex = 0;
             roleComboBox.SelectedIndex = 0;
             MainTab.SelectedIndex = 0;
+            if (cultureInfo.Name.Equals("tr-TR"))
+            {
+                moneyUnit.SelectedIndex = 0;
+            }
+            else if (cultureInfo.Name.Equals("en-US"))
+            {
+                moneyUnit.SelectedIndex = 1;
+            }
+            else
+            {
+                moneyUnit.SelectedIndex = 2;
+            }
+            
             //-------------------------------------------------------------------------------------------
 
             //---------------------------------Testing Inheritance---------------------------------------
@@ -222,7 +235,7 @@ namespace manageHub
 
             //int lastCelcius = Convert.ToDecimal(celcius);
             decimal celciusLast = Math.Ceiling(celcius);
-            Console.WriteLine("Weather status " + celciusLast); //check weather status
+            Console.WriteLine("Weather status " + celciusLast); //Check weather status
             if (celciusLast < 10)
             {
                 labelHot.Text = string.Concat("0" + (celciusLast).ToString("#"));

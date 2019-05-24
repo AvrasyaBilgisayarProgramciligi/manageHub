@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -109,6 +109,11 @@
             this.PersonnelInfoLabel = new System.Windows.Forms.Label();
             this.staffBox = new System.Windows.Forms.ListBox();
             this.ManagePersonnels = new MetroSet_UI.Child.MetroSetTabPage();
+            this.RemovePerson = new MetroSet_UI.Controls.MetroSetButton();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.AddPeson = new MetroSet_UI.Controls.MetroSetButton();
             this.label15 = new System.Windows.Forms.Label();
             this.addPersonSalary = new System.Windows.Forms.TextBox();
@@ -124,11 +129,11 @@
             this.addPersonName = new System.Windows.Forms.TextBox();
             this.AddPersonLabel = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.RemovePerson = new MetroSet_UI.Controls.MetroSetButton();
+            this.label30 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.moneyUnit = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -522,8 +527,8 @@
             this.DashBoard.StyleManager = this.styleManager;
             this.DashBoard.TabIndex = 0;
             this.DashBoard.Text = "DashBoard";
-            this.DashBoard.ThemeAuthor = "Narwin";
-            this.DashBoard.ThemeName = "MetroLite";
+            this.DashBoard.ThemeAuthor = null;
+            this.DashBoard.ThemeName = null;
             this.DashBoard.ToolTipText = null;
             // 
             // panel7
@@ -564,19 +569,19 @@
             // 
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.productChart.Legends.Add(legend4);
+            chartArea3.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.productChart.Legends.Add(legend3);
             this.productChart.Location = new System.Drawing.Point(0, 0);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.productChart.Series.Add(series4);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.productChart.Series.Add(series3);
             this.productChart.Size = new System.Drawing.Size(646, 348);
             this.productChart.TabIndex = 9;
             this.productChart.Text = "chart1";
@@ -970,8 +975,8 @@
             this.ShowPersonnels.StyleManager = this.styleManager;
             this.ShowPersonnels.TabIndex = 1;
             this.ShowPersonnels.Text = "Show Personnels";
-            this.ShowPersonnels.ThemeAuthor = "Narwin";
-            this.ShowPersonnels.ThemeName = "MetroLite";
+            this.ShowPersonnels.ThemeAuthor = null;
+            this.ShowPersonnels.ThemeName = null;
             this.ShowPersonnels.ToolTipText = null;
             // 
             // label29
@@ -1132,6 +1137,11 @@
             // ManagePersonnels
             // 
             this.ManagePersonnels.BaseColor = System.Drawing.Color.White;
+            this.ManagePersonnels.Controls.Add(this.moneyUnit);
+            this.ManagePersonnels.Controls.Add(this.textBox5);
+            this.ManagePersonnels.Controls.Add(this.label31);
+            this.ManagePersonnels.Controls.Add(this.maskedTextBox1);
+            this.ManagePersonnels.Controls.Add(this.label30);
             this.ManagePersonnels.Controls.Add(this.RemovePerson);
             this.ManagePersonnels.Controls.Add(this.label35);
             this.ManagePersonnels.Controls.Add(this.label34);
@@ -1160,9 +1170,80 @@
             this.ManagePersonnels.StyleManager = this.styleManager;
             this.ManagePersonnels.TabIndex = 2;
             this.ManagePersonnels.Text = "Manage Personnels";
-            this.ManagePersonnels.ThemeAuthor = "Narwin";
-            this.ManagePersonnels.ThemeName = "MetroLite";
+            this.ManagePersonnels.ThemeAuthor = null;
+            this.ManagePersonnels.ThemeName = null;
             this.ManagePersonnels.ToolTipText = null;
+            // 
+            // RemovePerson
+            // 
+            this.RemovePerson.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.RemovePerson.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.RemovePerson.DisabledForeColor = System.Drawing.Color.Gray;
+            this.RemovePerson.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemovePerson.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.RemovePerson.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.RemovePerson.HoverTextColor = System.Drawing.Color.White;
+            this.RemovePerson.Location = new System.Drawing.Point(298, 492);
+            this.RemovePerson.Name = "RemovePerson";
+            this.RemovePerson.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.RemovePerson.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.RemovePerson.NormalTextColor = System.Drawing.Color.White;
+            this.RemovePerson.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.RemovePerson.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.RemovePerson.PressTextColor = System.Drawing.Color.White;
+            this.RemovePerson.Size = new System.Drawing.Size(129, 32);
+            this.RemovePerson.Style = MetroSet_UI.Design.Style.Light;
+            this.RemovePerson.StyleManager = this.styleManager;
+            this.RemovePerson.TabIndex = 93;
+            this.RemovePerson.Text = "Remove Person";
+            this.RemovePerson.ThemeAuthor = null;
+            this.RemovePerson.ThemeName = null;
+            // 
+            // label35
+            // 
+            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label35.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label35.Location = new System.Drawing.Point(57, 25);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(370, 28);
+            this.label35.TabIndex = 84;
+            this.label35.Text = "Remove Person";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.SystemColors.Control;
+            this.label34.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label34.Location = new System.Drawing.Point(238, 71);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(80, 15);
+            this.label34.TabIndex = 83;
+            this.label34.Text = "Change Role";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(241, 89);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(186, 24);
+            this.comboBox2.TabIndex = 82;
+            // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.listBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 24;
+            this.listBox2.Location = new System.Drawing.Point(54, 116);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(373, 364);
+            this.listBox2.TabIndex = 81;
+            this.listBox2.TabStop = false;
             // 
             // AddPeson
             // 
@@ -1195,7 +1276,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label15.Location = new System.Drawing.Point(726, 127);
+            this.label15.Location = new System.Drawing.Point(726, 131);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 15);
             this.label15.TabIndex = 71;
@@ -1206,9 +1287,9 @@
             this.addPersonSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.addPersonSalary.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonSalary.Location = new System.Drawing.Point(729, 147);
+            this.addPersonSalary.Location = new System.Drawing.Point(770, 153);
             this.addPersonSalary.Name = "addPersonSalary";
-            this.addPersonSalary.Size = new System.Drawing.Size(236, 32);
+            this.addPersonSalary.Size = new System.Drawing.Size(195, 32);
             this.addPersonSalary.TabIndex = 65;
             // 
             // deleteRole
@@ -1216,7 +1297,7 @@
             this.deleteRole.AutoSize = true;
             this.deleteRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.deleteRole.Location = new System.Drawing.Point(567, 354);
+            this.deleteRole.Location = new System.Drawing.Point(567, 486);
             this.deleteRole.Name = "deleteRole";
             this.deleteRole.Size = new System.Drawing.Size(72, 15);
             this.deleteRole.TabIndex = 58;
@@ -1230,7 +1311,7 @@
             this.addNewRole.AutoSize = true;
             this.addNewRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.addNewRole.Location = new System.Drawing.Point(476, 354);
+            this.addNewRole.Location = new System.Drawing.Point(476, 486);
             this.addNewRole.Name = "addNewRole";
             this.addNewRole.Size = new System.Drawing.Size(85, 15);
             this.addNewRole.TabIndex = 59;
@@ -1258,7 +1339,7 @@
             this.roleBox.FormattingEnabled = true;
             this.roleBox.Location = new System.Drawing.Point(478, 214);
             this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(235, 130);
+            this.roleBox.Size = new System.Drawing.Size(235, 256);
             this.roleBox.TabIndex = 60;
             // 
             // label14
@@ -1266,7 +1347,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label14.Location = new System.Drawing.Point(726, 70);
+            this.label14.Location = new System.Drawing.Point(726, 71);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 15);
             this.label14.TabIndex = 69;
@@ -1277,7 +1358,7 @@
             this.addPersonLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.addPersonLastName.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonLastName.Location = new System.Drawing.Point(729, 90);
+            this.addPersonLastName.Location = new System.Drawing.Point(729, 92);
             this.addPersonLastName.Name = "addPersonLastName";
             this.addPersonLastName.Size = new System.Drawing.Size(236, 32);
             this.addPersonLastName.TabIndex = 63;
@@ -1352,76 +1433,64 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // label34
+            // label30
             // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.SystemColors.Control;
-            this.label34.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label34.Location = new System.Drawing.Point(238, 71);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(80, 15);
-            this.label34.TabIndex = 83;
-            this.label34.Text = "Change Role";
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Arial", 9F);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label30.Location = new System.Drawing.Point(726, 192);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(43, 15);
+            this.label30.TabIndex = 95;
+            this.label30.Text = "Phone";
             // 
-            // comboBox2
+            // maskedTextBox1
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(241, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(186, 24);
-            this.comboBox2.TabIndex = 82;
+            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.maskedTextBox1.Location = new System.Drawing.Point(729, 214);
+            this.maskedTextBox1.Mask = "(599) 000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(236, 32);
+            this.maskedTextBox1.TabIndex = 96;
             // 
-            // listBox2
+            // label31
             // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.listBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 24;
-            this.listBox2.Location = new System.Drawing.Point(54, 116);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(373, 364);
-            this.listBox2.TabIndex = 81;
-            this.listBox2.TabStop = false;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Arial", 9F);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label31.Location = new System.Drawing.Point(726, 258);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(46, 15);
+            this.label31.TabIndex = 97;
+            this.label31.Text = "Adress";
             // 
-            // label35
+            // textBox5
             // 
-            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.label35.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label35.Location = new System.Drawing.Point(57, 25);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(370, 28);
-            this.label35.TabIndex = 84;
-            this.label35.Text = "Remove Person";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox5.Location = new System.Drawing.Point(729, 281);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(236, 189);
+            this.textBox5.TabIndex = 98;
             // 
-            // RemovePerson
+            // moneyUnit
             // 
-            this.RemovePerson.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.RemovePerson.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.RemovePerson.DisabledForeColor = System.Drawing.Color.Gray;
-            this.RemovePerson.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemovePerson.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.RemovePerson.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.RemovePerson.HoverTextColor = System.Drawing.Color.White;
-            this.RemovePerson.Location = new System.Drawing.Point(298, 492);
-            this.RemovePerson.Name = "RemovePerson";
-            this.RemovePerson.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.RemovePerson.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.RemovePerson.NormalTextColor = System.Drawing.Color.White;
-            this.RemovePerson.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.RemovePerson.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.RemovePerson.PressTextColor = System.Drawing.Color.White;
-            this.RemovePerson.Size = new System.Drawing.Size(129, 32);
-            this.RemovePerson.Style = MetroSet_UI.Design.Style.Light;
-            this.RemovePerson.StyleManager = this.styleManager;
-            this.RemovePerson.TabIndex = 93;
-            this.RemovePerson.Text = "Remove Person";
-            this.RemovePerson.ThemeAuthor = null;
-            this.RemovePerson.ThemeName = null;
+            this.moneyUnit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.moneyUnit.FormattingEnabled = true;
+            this.moneyUnit.Items.AddRange(new object[] {
+            "₺",
+            "$",
+            "€"});
+            this.moneyUnit.Location = new System.Drawing.Point(729, 153);
+            this.moneyUnit.Name = "moneyUnit";
+            this.moneyUnit.Size = new System.Drawing.Size(37, 32);
+            this.moneyUnit.TabIndex = 99;
+            this.moneyUnit.TabStop = false;
             // 
             // DashBoardForm
             // 
@@ -1561,5 +1630,10 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ListBox listBox2;
         private MetroSet_UI.Controls.MetroSetButton RemovePerson;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox moneyUnit;
     }
 }

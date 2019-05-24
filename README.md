@@ -16,7 +16,7 @@ Manage hub is a basic and open source company management system !
 Use the command line to install Manage Hub.
 
 ```bash
-$ git https://github.com/AvrasyaBilgisayarProgramciligi/manageHub.git
+$ git clone https://github.com/AvrasyaBilgisayarProgramciligi/manageHub.git
 ```
 ## Contributing
 

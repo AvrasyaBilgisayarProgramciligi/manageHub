@@ -1,4 +1,4 @@
-# User-specific files
+ # User-specific files
 *.suo
 *.user
 *.userosscache
@@ -15,7 +15,7 @@
 x64/
 x86/
 bld/
-[Bb]in/
+ #[Bb]in/
 [Oo]bj/
 [Ll]og/
 

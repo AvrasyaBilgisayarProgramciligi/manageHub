@@ -32,11 +32,11 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.bClosee = new System.Windows.Forms.Button();
             this.bClose = new System.Windows.Forms.Button();
-            this.bAddItem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.itemName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bAddItem = new MetroSet_UI.Controls.MetroSetButton();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(364, 28);
             this.mainPanel.TabIndex = 16;
+            this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             // 
             // bClosee
             // 
@@ -78,26 +79,12 @@
             this.bClose.TabIndex = 1;
             this.bClose.UseVisualStyleBackColor = true;
             // 
-            // bAddItem
-            // 
-            this.bAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(136)))));
-            this.bAddItem.FlatAppearance.BorderSize = 0;
-            this.bAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAddItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAddItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bAddItem.Location = new System.Drawing.Point(253, 111);
-            this.bAddItem.Name = "bAddItem";
-            this.bAddItem.Size = new System.Drawing.Size(88, 32);
-            this.bAddItem.TabIndex = 21;
-            this.bAddItem.Text = "Add";
-            this.bAddItem.UseVisualStyleBackColor = false;
-            this.bAddItem.Click += new System.EventHandler(this.BAddItem_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label2.Location = new System.Drawing.Point(54, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 16);
@@ -106,9 +93,9 @@
             // 
             // itemName
             // 
-            this.itemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.itemName.BackColor = System.Drawing.Color.White;
             this.itemName.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.itemName.ForeColor = System.Drawing.Color.Silver;
+            this.itemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.itemName.Location = new System.Drawing.Point(57, 111);
             this.itemName.Name = "itemName";
             this.itemName.Size = new System.Drawing.Size(174, 32);
@@ -118,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(120, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 32);
@@ -127,17 +114,43 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(136)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.panel1.Location = new System.Drawing.Point(1, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(362, 4);
             this.panel1.TabIndex = 17;
             // 
+            // bAddItem
+            // 
+            this.bAddItem.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.bAddItem.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.bAddItem.DisabledForeColor = System.Drawing.Color.Gray;
+            this.bAddItem.Font = new System.Drawing.Font("Arial", 12F);
+            this.bAddItem.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.bAddItem.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.bAddItem.HoverTextColor = System.Drawing.Color.White;
+            this.bAddItem.Location = new System.Drawing.Point(253, 111);
+            this.bAddItem.Name = "bAddItem";
+            this.bAddItem.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.bAddItem.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.bAddItem.NormalTextColor = System.Drawing.Color.White;
+            this.bAddItem.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.bAddItem.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.bAddItem.PressTextColor = System.Drawing.Color.White;
+            this.bAddItem.Size = new System.Drawing.Size(88, 32);
+            this.bAddItem.Style = MetroSet_UI.Design.Style.Light;
+            this.bAddItem.StyleManager = null;
+            this.bAddItem.TabIndex = 22;
+            this.bAddItem.Text = "Add";
+            this.bAddItem.ThemeAuthor = "Narwin";
+            this.bAddItem.ThemeName = "MetroLite";
+            this.bAddItem.Click += new System.EventHandler(this.BAddItem_Click);
+            // 
             // AddItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(364, 168);
             this.Controls.Add(this.bAddItem);
             this.Controls.Add(this.label2);
@@ -160,10 +173,10 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button bClosee;
         private System.Windows.Forms.Button bClose;
-        private System.Windows.Forms.Button bAddItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox itemName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private MetroSet_UI.Controls.MetroSetButton bAddItem;
     }
 }

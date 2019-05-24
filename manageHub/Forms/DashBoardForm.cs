@@ -58,8 +58,6 @@ namespace manageHub
 
         private void DashBoardForm_Load(object sender, EventArgs e)
         {
-            deleteItem.Visible = false;
-            deleteRole.Visible = false;
 
             //---------------------------------API's & Time functions-----------------------------------
             t.Interval = 1000;
@@ -581,44 +579,40 @@ namespace manageHub
             this.addNewRole.Font = new Font("Arial", 9, FontStyle.Regular);
         }
 
-        private void RoleBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void DeleteRole_Click(object sender, EventArgs e)
         {
-            if (!(roleBox.GetItemChecked(e.Index)))
+            if(roleBox.CheckedItems.Count < 1)
             {
-                deleteRole.Visible = true;
-                addNewRole.Visible = false;
+                return;
+            }
+            DialogResult result;
+            result = MessageBox.Show("Are you sure want to delete the selected roles?", "Manage Hub", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                foreach (string item in roleBox.CheckedItems.OfType<string>().ToList())
+                {
+                    try
+                    {
+                        conn.Open();
+                        OleDbCommand cmd = new OleDbCommand("DELETE FROM roles WHERE [roleName] = @roleName", conn);
+                        cmd.Parameters.AddWithValue("@roleName", item);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.ToString());
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                    roleBox.Items.Remove(item);
+                }
             }
             else
             {
-                addNewRole.Visible = true;
-                deleteRole.Visible = false;
+                return;
             }
-        }
-
-        private void DeleteRole_Click(object sender, EventArgs e)
-        {
-            foreach (string item in roleBox.CheckedItems.OfType<string>().ToList())
-            {
-                try
-                {
-                    conn.Open();
-                    OleDbCommand cmd = new OleDbCommand("DELETE FROM roles WHERE [roleName] = @roleName", conn);
-                    cmd.Parameters.AddWithValue("@roleName", item);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception exc)
-                {
-                    Console.WriteLine(exc.ToString());
-                }
-                finally
-                {
-                    conn.Close();
-                }
-                roleBox.Items.Remove(item);
-            }
-
-            deleteRole.Visible = false;
-            addNewRole.Visible = true;
         }
 
         private void DeleteRole_MouseEnter(object sender, EventArgs e)

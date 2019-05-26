@@ -3,11 +3,11 @@
 # Manage Hub
 Manage hub is a basic and open source company management system !
 
-![Build](https://travis-ci.org/theLeprosy/manageHub.svg?branch=master)
-![GitHub issues](https://img.shields.io/github/issues/AvrasyaBilgisayarProgramciligi/manageHub.svg)
-![GitHub forks](https://img.shields.io/github/forks/AvrasyaBilgisayarProgramciligi/manageHub.svg)
-![GitHub stars](https://img.shields.io/github/stars/AvrasyaBilgisayarProgramciligi/manageHub.svg)
-![GitHub license](https://img.shields.io/github/license/AvrasyaBilgisayarProgramciligi/manageHub.svg)
+![Build Status](https://travis-ci.org/theLeprosy/manageHub.svg?branch=master)
+![GitHub Issues](https://img.shields.io/github/issues/AvrasyaBilgisayarProgramciligi/manageHub.svg)
+![GitHub Forks](https://img.shields.io/github/forks/AvrasyaBilgisayarProgramciligi/manageHub.svg)
+![GitHub Stars](https://img.shields.io/github/stars/AvrasyaBilgisayarProgramciligi/manageHub.svg)
+![GitHub License](https://img.shields.io/github/license/AvrasyaBilgisayarProgramciligi/manageHub.svg)
 ![Twitter](	https://img.shields.io/twitter/url/https/github.com%2FAvrasyaBilgisayarProgramciligi%2FmanageHub.svg)
 
 ![DashBoard](http://i67.tinypic.com/5ui9o1.png)

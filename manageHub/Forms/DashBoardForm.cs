@@ -59,6 +59,8 @@ namespace manageHub
         private void DashBoardForm_Load(object sender, EventArgs e)
         {
 
+            deleteItem.Visible = false;
+
             //---------------------------------API's & Time functions-----------------------------------
             t.Interval = 1000;
             t.Tick += new EventHandler(this.t_Tick);
@@ -73,12 +75,14 @@ namespace manageHub
             SplineChart();
             AddItemStaffBox();
             AddRoleComboBox();
+            AddRoleComboBox2();
             CallRoles();
             //-------------------------------------------------------------------------------------------
 
             //------------------------------------Data selections----------------------------------------
-            staffBox.SelectedIndex = 0;
             roleComboBox.SelectedIndex = 0;
+            roleComboBox2.SelectedIndex = 0;
+            staffBox.SelectedIndex = 0;
             MainTab.SelectedIndex = 0;
             if (cultureInfo.Name.Equals("tr-TR"))
             {
@@ -92,7 +96,7 @@ namespace manageHub
             {
                 moneyUnit.SelectedIndex = 2;
             }
-            
+
             //-------------------------------------------------------------------------------------------
 
             //---------------------------------Testing Inheritance---------------------------------------
@@ -427,14 +431,14 @@ namespace manageHub
             try
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM personnel WHERE [pName] AND [pLastName] AND [pRole] = @pRole", conn);
-                cmd.Parameters.AddWithValue("@pRole", "Programmer");
+                OleDbCommand cmd = new OleDbCommand("SELECT pName, pLastName FROM personnel WHERE [pRole] = @pRole", conn);
+                cmd.Parameters.AddWithValue("@pRole", roleComboBox.GetItemText(roleComboBox.SelectedItem));
                 OleDbDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Console.WriteLine(pName + " " + pLastName);
-                    staffBox.Items.Add(reader[1].ToString() + " " + reader[2].ToString());
+                    Console.WriteLine(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
+                    staffBox.Items.Add(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
                 }
             }
             catch (Exception exc)
@@ -464,20 +468,23 @@ namespace manageHub
             try
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT pDepart, pSalary, pRole FROM personnel WHERE [pName] = @pName", conn);
+                OleDbCommand cmd = new OleDbCommand("SELECT [pDepart], [pSalary], [pRole], [pPhone], [pE-Mail], [pAdress] FROM personnel WHERE [pName] = @pName", conn);
                 cmd.Parameters.AddWithValue("@pName", staffBox.SelectedItem.ToString().Substring(0, staffBox.SelectedItem.ToString().LastIndexOf(' ')));
                 OleDbDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
                     departLabel.Text = "Depart: " + reader["pDepart"].ToString();
-                    salaryLabel.Text = "Salary: $" + reader["pSalary"].ToString();
+                    salaryLabel.Text = "Salary: " + reader["pSalary"].ToString();
                     rolesLabel.Text = "Roles: " + reader["pRole"].ToString();
+                    phoneLabel.Text = "Phone: " + reader["pPhone"].ToString();
+                    eMailLabel.Text = "e-Mail: " + reader["pE-Mail"].ToString();
+                    adressLabel.Text = "Adress: " + reader["pAdress"].ToString();
                 }
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.ToString());
+                Console.WriteLine(exc.ToString());
             }
             finally
             {
@@ -544,6 +551,38 @@ namespace manageHub
             }
         }
 
+        private void AddRoleComboBox2()
+        {
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM roles", conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string role = reader["roleName"].ToString();
+
+                    if (roleComboBox2.Items.Contains(role))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        roleComboBox2.Items.Add(role);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void RoleComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -594,7 +633,7 @@ namespace manageHub
 
         private void DeleteRole_Click(object sender, EventArgs e)
         {
-            if(roleBox.CheckedItems.Count < 1)
+            if (roleBox.CheckedItems.Count < 1)
             {
                 return;
             }
@@ -677,22 +716,61 @@ namespace manageHub
                 return;
             }
 
+            DialogResult result;
+            result = MessageBox.Show("Are you sure want to add new person?", "Manage Hub", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    OleDbCommand cmd = new OleDbCommand("INSERT INTO personnel ([pName], [pLastName], [pDepart], [pSalary], [pRole], [pPhone] , [pE-Mail], [pAdress]) VALUES (@pName, @pLastName, @pDepart, @pSalary, @pRole, @pPhone, @pE-Mail, @pAdress)", conn);
+                    cmd.Parameters.AddWithValue("@pName", addPersonName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pLastName", addPersonLastName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pDepart", addPersonDepart.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pSalary", moneyUnit.GetItemText(moneyUnit.SelectedItem) + " " + addPersonSalary.Text.Trim());
+                    foreach (object checkedItems in roleBox.CheckedItems)
+                    {
+                        string chckedItem = checkedItems.ToString();
+                        cmd.Parameters.AddWithValue("@pRole", chckedItem);
+                    }
+                    cmd.Parameters.AddWithValue("@pPhone", addPersonPhone.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pE-Mail", addPersoneMail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pAdress", addPersonAdress.Text.Trim());
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Person successfully added", "İnfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                    UpdateStaffBox();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void RoleComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("INSERT INTO personnel ([pName], [pLastName], [pDepart], [pSalary], [pRole]) VALUES (@pName, @pLastName, @pDepart, @pSalary, @pRole)", conn);
-                cmd.Parameters.AddWithValue("@pName", addPersonName.Text.Trim());
-                cmd.Parameters.AddWithValue("@pLastName", addPersonLastName.Text.Trim());
-                cmd.Parameters.AddWithValue("@pDepart", addPersonDepart.Text.Trim());
-                cmd.Parameters.AddWithValue("@pSalary", addPersonSalary.Text.Trim());
-                foreach (object checkedItems in roleBox.CheckedItems)
-                {
-                    string chckedItem = checkedItems.ToString();
-                    cmd.Parameters.AddWithValue("@pRole", chckedItem);
-                }
-                cmd.ExecuteNonQuery();
+                OleDbCommand cmd = new OleDbCommand("SELECT pName, pLastName FROM personnel WHERE [pRole] = @pRole", conn);
+                cmd.Parameters.AddWithValue("@pRole", roleComboBox2.GetItemText(roleComboBox2.SelectedItem));
+                OleDbDataReader reader = cmd.ExecuteReader();
+                staffBox2.Items.Clear();
 
-                MessageBox.Show("Person successfully added", "İnfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                while (reader.Read())
+                {
+                    staffBox2.Items.Add(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
+                }
             }
             catch (Exception exc)
             {
@@ -701,8 +779,18 @@ namespace manageHub
             finally
             {
                 conn.Close();
-                UpdateStaffBox();
             }
+        }
+
+        private void RoleComboBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            roleComboBox2.Items.Clear();
+            AddRoleComboBox2();
+        }
+
+        private void RemovePerson_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

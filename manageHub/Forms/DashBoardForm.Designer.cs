@@ -96,7 +96,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.styleManager = new MetroSet_UI.StyleManager();
             this.ShowPersonnels = new MetroSet_UI.Child.MetroSetTabPage();
-            this.label29 = new System.Windows.Forms.Label();
+            this.adressLabel = new System.Windows.Forms.Label();
             this.eMailLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -109,11 +109,16 @@
             this.PersonnelInfoLabel = new System.Windows.Forms.Label();
             this.staffBox = new System.Windows.Forms.ListBox();
             this.ManagePersonnels = new MetroSet_UI.Child.MetroSetTabPage();
+            this.moneyUnit = new System.Windows.Forms.ComboBox();
+            this.addPersonAdress = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.addPersonPhone = new System.Windows.Forms.MaskedTextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.RemovePerson = new MetroSet_UI.Controls.MetroSetButton();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.roleComboBox2 = new System.Windows.Forms.ComboBox();
+            this.staffBox2 = new System.Windows.Forms.ListBox();
             this.AddPeson = new MetroSet_UI.Controls.MetroSetButton();
             this.label15 = new System.Windows.Forms.Label();
             this.addPersonSalary = new System.Windows.Forms.TextBox();
@@ -129,11 +134,8 @@
             this.addPersonName = new System.Windows.Forms.TextBox();
             this.AddPersonLabel = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.label30 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.moneyUnit = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.addPersoneMail = new System.Windows.Forms.TextBox();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -491,7 +493,7 @@
             this.MainTab.Controls.Add(this.DashBoard);
             this.MainTab.Controls.Add(this.ShowPersonnels);
             this.MainTab.Controls.Add(this.ManagePersonnels);
-            this.MainTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MainTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
@@ -504,7 +506,7 @@
             this.MainTab.StyleManager = this.styleManager;
             this.MainTab.TabIndex = 3;
             this.MainTab.TabStop = false;
-            this.MainTab.TabStyle = MetroSet_UI.Enums.TabStyle.Style1;
+            this.MainTab.TabStyle = MetroSet_UI.Enums.TabStyle.Style2;
             this.MainTab.ThemeAuthor = null;
             this.MainTab.ThemeName = null;
             this.MainTab.UseAnimation = false;
@@ -797,6 +799,7 @@
             // changeCity
             // 
             this.changeCity.BackColor = System.Drawing.Color.Transparent;
+            this.changeCity.BackgroundImage = global::manageHub.Properties.Resources.baseline_where_to_vote_white_18dp;
             this.changeCity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.changeCity.Enabled = false;
             this.changeCity.FlatAppearance.BorderSize = 0;
@@ -954,7 +957,7 @@
             // ShowPersonnels
             // 
             this.ShowPersonnels.BaseColor = System.Drawing.Color.White;
-            this.ShowPersonnels.Controls.Add(this.label29);
+            this.ShowPersonnels.Controls.Add(this.adressLabel);
             this.ShowPersonnels.Controls.Add(this.eMailLabel);
             this.ShowPersonnels.Controls.Add(this.phoneLabel);
             this.ShowPersonnels.Controls.Add(this.label8);
@@ -979,18 +982,18 @@
             this.ShowPersonnels.ThemeName = null;
             this.ShowPersonnels.ToolTipText = null;
             // 
-            // label29
+            // adressLabel
             // 
-            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label29.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label29.Location = new System.Drawing.Point(477, 268);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(485, 241);
-            this.label29.TabIndex = 64;
-            this.label29.Text = "Adress:";
+            this.adressLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.adressLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.adressLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adressLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adressLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.adressLabel.Location = new System.Drawing.Point(477, 268);
+            this.adressLabel.Name = "adressLabel";
+            this.adressLabel.Size = new System.Drawing.Size(485, 241);
+            this.adressLabel.TabIndex = 64;
+            this.adressLabel.Text = "Adress:";
             // 
             // eMailLabel
             // 
@@ -1137,16 +1140,18 @@
             // ManagePersonnels
             // 
             this.ManagePersonnels.BaseColor = System.Drawing.Color.White;
+            this.ManagePersonnels.Controls.Add(this.label29);
+            this.ManagePersonnels.Controls.Add(this.addPersoneMail);
             this.ManagePersonnels.Controls.Add(this.moneyUnit);
-            this.ManagePersonnels.Controls.Add(this.textBox5);
+            this.ManagePersonnels.Controls.Add(this.addPersonAdress);
             this.ManagePersonnels.Controls.Add(this.label31);
-            this.ManagePersonnels.Controls.Add(this.maskedTextBox1);
+            this.ManagePersonnels.Controls.Add(this.addPersonPhone);
             this.ManagePersonnels.Controls.Add(this.label30);
             this.ManagePersonnels.Controls.Add(this.RemovePerson);
             this.ManagePersonnels.Controls.Add(this.label35);
             this.ManagePersonnels.Controls.Add(this.label34);
-            this.ManagePersonnels.Controls.Add(this.comboBox2);
-            this.ManagePersonnels.Controls.Add(this.listBox2);
+            this.ManagePersonnels.Controls.Add(this.roleComboBox2);
+            this.ManagePersonnels.Controls.Add(this.staffBox2);
             this.ManagePersonnels.Controls.Add(this.AddPeson);
             this.ManagePersonnels.Controls.Add(this.label15);
             this.ManagePersonnels.Controls.Add(this.addPersonSalary);
@@ -1174,6 +1179,65 @@
             this.ManagePersonnels.ThemeName = null;
             this.ManagePersonnels.ToolTipText = null;
             // 
+            // moneyUnit
+            // 
+            this.moneyUnit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.moneyUnit.FormattingEnabled = true;
+            this.moneyUnit.Items.AddRange(new object[] {
+            "₺",
+            "$",
+            "€"});
+            this.moneyUnit.Location = new System.Drawing.Point(729, 153);
+            this.moneyUnit.Name = "moneyUnit";
+            this.moneyUnit.Size = new System.Drawing.Size(37, 32);
+            this.moneyUnit.TabIndex = 99;
+            this.moneyUnit.TabStop = false;
+            // 
+            // addPersonAdress
+            // 
+            this.addPersonAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonAdress.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.addPersonAdress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addPersonAdress.Location = new System.Drawing.Point(729, 281);
+            this.addPersonAdress.Multiline = true;
+            this.addPersonAdress.Name = "addPersonAdress";
+            this.addPersonAdress.Size = new System.Drawing.Size(236, 189);
+            this.addPersonAdress.TabIndex = 98;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Arial", 9F);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label31.Location = new System.Drawing.Point(726, 258);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(46, 15);
+            this.label31.TabIndex = 97;
+            this.label31.Text = "Adress";
+            // 
+            // addPersonPhone
+            // 
+            this.addPersonPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonPhone.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.addPersonPhone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addPersonPhone.Location = new System.Drawing.Point(729, 214);
+            this.addPersonPhone.Mask = "(599) 000-0000";
+            this.addPersonPhone.Name = "addPersonPhone";
+            this.addPersonPhone.Size = new System.Drawing.Size(236, 32);
+            this.addPersonPhone.TabIndex = 96;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Arial", 9F);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label30.Location = new System.Drawing.Point(726, 192);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(43, 15);
+            this.label30.TabIndex = 95;
+            this.label30.Text = "Phone";
+            // 
             // RemovePerson
             // 
             this.RemovePerson.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -1198,6 +1262,7 @@
             this.RemovePerson.Text = "Remove Person";
             this.RemovePerson.ThemeAuthor = null;
             this.RemovePerson.ThemeName = null;
+            this.RemovePerson.Click += new System.EventHandler(this.RemovePerson_Click);
             // 
             // label35
             // 
@@ -1223,27 +1288,29 @@
             this.label34.TabIndex = 83;
             this.label34.Text = "Change Role";
             // 
-            // comboBox2
+            // roleComboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(241, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(186, 24);
-            this.comboBox2.TabIndex = 82;
+            this.roleComboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleComboBox2.FormattingEnabled = true;
+            this.roleComboBox2.Location = new System.Drawing.Point(241, 89);
+            this.roleComboBox2.Name = "roleComboBox2";
+            this.roleComboBox2.Size = new System.Drawing.Size(186, 24);
+            this.roleComboBox2.TabIndex = 82;
+            this.roleComboBox2.SelectedIndexChanged += new System.EventHandler(this.RoleComboBox2_SelectedIndexChanged);
+            this.roleComboBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RoleComboBox2_MouseMove);
             // 
-            // listBox2
+            // staffBox2
             // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.listBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 24;
-            this.listBox2.Location = new System.Drawing.Point(54, 116);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(373, 364);
-            this.listBox2.TabIndex = 81;
-            this.listBox2.TabStop = false;
+            this.staffBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.staffBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.staffBox2.FormattingEnabled = true;
+            this.staffBox2.ItemHeight = 24;
+            this.staffBox2.Location = new System.Drawing.Point(54, 116);
+            this.staffBox2.Name = "staffBox2";
+            this.staffBox2.Size = new System.Drawing.Size(373, 364);
+            this.staffBox2.TabIndex = 81;
+            this.staffBox2.TabStop = false;
             // 
             // AddPeson
             // 
@@ -1325,7 +1392,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 9F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label13.Location = new System.Drawing.Point(475, 192);
+            this.label13.Location = new System.Drawing.Point(476, 258);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 15);
             this.label13.TabIndex = 70;
@@ -1335,11 +1402,12 @@
             // 
             this.roleBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.roleBox.CheckOnClick = true;
+            this.roleBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.roleBox.FormattingEnabled = true;
-            this.roleBox.Location = new System.Drawing.Point(478, 214);
+            this.roleBox.Location = new System.Drawing.Point(478, 286);
             this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(235, 256);
+            this.roleBox.Size = new System.Drawing.Size(235, 184);
             this.roleBox.TabIndex = 60;
             // 
             // label14
@@ -1347,11 +1415,11 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label14.Location = new System.Drawing.Point(726, 71);
+            this.label14.Location = new System.Drawing.Point(726, 70);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 15);
+            this.label14.Size = new System.Drawing.Size(68, 15);
             this.label14.TabIndex = 69;
-            this.label14.Text = "Surname";
+            this.label14.Text = "Last Name";
             // 
             // addPersonLastName
             // 
@@ -1433,64 +1501,26 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // label30
+            // label29
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 9F);
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label30.Location = new System.Drawing.Point(726, 192);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(43, 15);
-            this.label30.TabIndex = 95;
-            this.label30.Text = "Phone";
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Arial", 9F);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label29.Location = new System.Drawing.Point(476, 192);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 15);
+            this.label29.TabIndex = 101;
+            this.label29.Text = "e-Mail";
             // 
-            // maskedTextBox1
+            // addPersoneMail
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.maskedTextBox1.Location = new System.Drawing.Point(729, 214);
-            this.maskedTextBox1.Mask = "(599) 000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(236, 32);
-            this.maskedTextBox1.TabIndex = 96;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Arial", 9F);
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label31.Location = new System.Drawing.Point(726, 258);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(46, 15);
-            this.label31.TabIndex = 97;
-            this.label31.Text = "Adress";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox5.Location = new System.Drawing.Point(729, 281);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(236, 189);
-            this.textBox5.TabIndex = 98;
-            // 
-            // moneyUnit
-            // 
-            this.moneyUnit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moneyUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.moneyUnit.FormattingEnabled = true;
-            this.moneyUnit.Items.AddRange(new object[] {
-            "₺",
-            "$",
-            "€"});
-            this.moneyUnit.Location = new System.Drawing.Point(729, 153);
-            this.moneyUnit.Name = "moneyUnit";
-            this.moneyUnit.Size = new System.Drawing.Size(37, 32);
-            this.moneyUnit.TabIndex = 99;
-            this.moneyUnit.TabStop = false;
+            this.addPersoneMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersoneMail.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.addPersoneMail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addPersoneMail.Location = new System.Drawing.Point(478, 214);
+            this.addPersoneMail.Name = "addPersoneMail";
+            this.addPersoneMail.Size = new System.Drawing.Size(236, 32);
+            this.addPersoneMail.TabIndex = 100;
             // 
             // DashBoardForm
             // 
@@ -1606,7 +1636,7 @@
         private System.Windows.Forms.Label departLabel;
         private System.Windows.Forms.Label PersonnelInfoLabel;
         private System.Windows.Forms.ListBox staffBox;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label adressLabel;
         private System.Windows.Forms.Label eMailLabel;
         private System.Windows.Forms.Label phoneLabel;
         private System.Windows.Forms.Label label15;
@@ -1627,13 +1657,15 @@
         private MetroSet_UI.Child.MetroSetTabPage metroSetTabPage1;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ComboBox roleComboBox2;
+        private System.Windows.Forms.ListBox staffBox2;
         private MetroSet_UI.Controls.MetroSetButton RemovePerson;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.MaskedTextBox addPersonPhone;
+        private System.Windows.Forms.TextBox addPersonAdress;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox moneyUnit;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox addPersoneMail;
     }
 }

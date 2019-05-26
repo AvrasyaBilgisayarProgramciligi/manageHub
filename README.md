@@ -3,7 +3,7 @@
 # Manage Hub
 Manage hub is a basic and open source company management system !
 
-![Build Status](https://travis-ci.org/theLeprosy/manageHub.svg?branch=master)
+[![Build Status](https://travis-ci.org/theLeprosy/manageHub.svg?branch=master)](https://travis-ci.org/theLeprosy/manageHub)
 ![GitHub Issues](https://img.shields.io/github/issues/AvrasyaBilgisayarProgramciligi/manageHub.svg)
 ![GitHub Forks](https://img.shields.io/github/forks/AvrasyaBilgisayarProgramciligi/manageHub.svg)
 ![GitHub Stars](https://img.shields.io/github/stars/AvrasyaBilgisayarProgramciligi/manageHub.svg)

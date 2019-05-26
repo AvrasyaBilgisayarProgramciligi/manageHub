@@ -460,8 +460,8 @@ namespace manageHub
             }
             else
             {
-                nameLabel.Text = staffBox.SelectedItem.ToString().Substring(0, staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
-                surnameLabel.Text = staffBox.SelectedItem.ToString().Substring(staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
+                nameLabel.Text ="Name: " + staffBox.SelectedItem.ToString().Substring(0, staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
+                lastNameLabel.Text = "Last Name: " + staffBox.SelectedItem.ToString().Substring(staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
             }
 
 
@@ -703,6 +703,8 @@ namespace manageHub
         private void AddPerson_Click(object sender, EventArgs e)
         {
 
+            Console.WriteLine(moneyUnit.GetItemText(moneyUnit.SelectedItem) + " " + addPersonSalary.Text.Trim());
+
             if (roleBox.CheckedItems.Count > 1)
             {
                 MessageBox.Show("You can't add 2 role", "Manage Hub", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -724,7 +726,7 @@ namespace manageHub
                 try
                 {
                     conn.Open();
-                    OleDbCommand cmd = new OleDbCommand("INSERT INTO personnel ([pName], [pLastName], [pDepart], [pSalary], [pRole], [pPhone] , [pE-Mail], [pAdress]) VALUES (@pName, @pLastName, @pDepart, @pSalary, @pRole, @pPhone, @pE-Mail, @pAdress)", conn);
+                    OleDbCommand cmd = new OleDbCommand("INSERT INTO personnel ([pName], [pLastName], [pDepart], [pSalary], [pRole], [pE-Mail], [pPhone], [pAdress]) VALUES (@pName, @pLastName, @pDepart, @pSalary, @pRole, @pE-Mail, @pPhone, @pAdress)", conn);
                     cmd.Parameters.AddWithValue("@pName", addPersonName.Text.Trim());
                     cmd.Parameters.AddWithValue("@pLastName", addPersonLastName.Text.Trim());
                     cmd.Parameters.AddWithValue("@pDepart", addPersonDepart.Text.Trim());
@@ -734,8 +736,8 @@ namespace manageHub
                         string chckedItem = checkedItems.ToString();
                         cmd.Parameters.AddWithValue("@pRole", chckedItem);
                     }
-                    cmd.Parameters.AddWithValue("@pPhone", addPersonPhone.Text.Trim());
                     cmd.Parameters.AddWithValue("@pE-Mail", addPersoneMail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pPhone", addPersonPhone.Text.Trim());
                     cmd.Parameters.AddWithValue("@pAdress", addPersonAdress.Text.Trim());
                     cmd.ExecuteNonQuery();
 
@@ -788,9 +790,62 @@ namespace manageHub
             AddRoleComboBox2();
         }
 
+        private void updateStaffBox2()
+        {
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT pName, pLastName FROM personnel WHERE [pRole] = @pRole", conn);
+                cmd.Parameters.AddWithValue("@pRole", roleComboBox2.GetItemText(roleComboBox2.SelectedItem));
+                OleDbDataReader reader = cmd.ExecuteReader();
+                staffBox2.Items.Clear();
+
+                while (reader.Read())
+                {
+                    staffBox2.Items.Add(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void RemovePerson_Click(object sender, EventArgs e)
         {
 
+            Console.WriteLine(staffBox2.GetItemText(staffBox2.SelectedItem.ToString().Substring(0, staffBox2.SelectedItem.ToString().LastIndexOf(' '))));
+            Console.WriteLine(staffBox2.GetItemText(staffBox2.SelectedItem.ToString().Substring(staffBox2.SelectedItem.ToString().LastIndexOf(' '))));
+            DialogResult result;
+            result = MessageBox.Show("Are you sure want to remove selected person?", "Manage Hub", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    OleDbCommand cmd = new OleDbCommand("DELETE FROM personnel WHERE [pName] = @pName AND [pLastNAme] = @pLastName", conn);
+                    cmd.Parameters.AddWithValue("@pName", staffBox2.GetItemText(staffBox2.SelectedItem.ToString().Substring(0, staffBox2.SelectedItem.ToString().Trim().LastIndexOf(' '))));
+                    cmd.Parameters.AddWithValue("@pLastName", staffBox2.GetItemText(staffBox2.SelectedItem.ToString().Substring(staffBox2.SelectedItem.ToString().Trim().LastIndexOf(' '))));
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
+                finally
+                {
+                    updateStaffBox2();
+                    conn.Close();
+                }
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

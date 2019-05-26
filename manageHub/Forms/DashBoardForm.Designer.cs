@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -102,13 +102,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.rolesLabel = new System.Windows.Forms.Label();
-            this.surnameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.salaryLabel = new System.Windows.Forms.Label();
             this.departLabel = new System.Windows.Forms.Label();
             this.PersonnelInfoLabel = new System.Windows.Forms.Label();
             this.staffBox = new System.Windows.Forms.ListBox();
             this.ManagePersonnels = new MetroSet_UI.Child.MetroSetTabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.addPersoneMail = new System.Windows.Forms.TextBox();
             this.moneyUnit = new System.Windows.Forms.ComboBox();
             this.addPersonAdress = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -134,8 +136,7 @@
             this.addPersonName = new System.Windows.Forms.TextBox();
             this.AddPersonLabel = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.label29 = new System.Windows.Forms.Label();
-            this.addPersoneMail = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -506,7 +507,7 @@
             this.MainTab.StyleManager = this.styleManager;
             this.MainTab.TabIndex = 3;
             this.MainTab.TabStop = false;
-            this.MainTab.TabStyle = MetroSet_UI.Enums.TabStyle.Style2;
+            this.MainTab.TabStyle = MetroSet_UI.Enums.TabStyle.Style1;
             this.MainTab.ThemeAuthor = null;
             this.MainTab.ThemeName = null;
             this.MainTab.UseAnimation = false;
@@ -514,8 +515,8 @@
             // DashBoard
             // 
             this.DashBoard.BaseColor = System.Drawing.Color.White;
+            this.DashBoard.Controls.Add(this.panel8);
             this.DashBoard.Controls.Add(this.panel7);
-            this.DashBoard.Controls.Add(this.panel11);
             this.DashBoard.Controls.Add(this.panel6);
             this.DashBoard.Controls.Add(this.panel3);
             this.DashBoard.Controls.Add(this.panel2);
@@ -537,18 +538,17 @@
             // 
             this.panel7.BackgroundImage = global::manageHub.Properties.Resources.dash5;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.saveChart);
             this.panel7.Controls.Add(this.productChart);
-            this.panel7.Location = new System.Drawing.Point(340, 187);
+            this.panel7.Location = new System.Drawing.Point(347, 187);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(646, 344);
+            this.panel7.Size = new System.Drawing.Size(639, 344);
             this.panel7.TabIndex = 19;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel8.Location = new System.Drawing.Point(636, 0);
+            this.panel8.Location = new System.Drawing.Point(997, 187);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 344);
             this.panel8.TabIndex = 7;
@@ -560,7 +560,7 @@
             this.saveChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.saveChart.FlatAppearance.BorderSize = 0;
             this.saveChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveChart.Location = new System.Drawing.Point(583, 302);
+            this.saveChart.Location = new System.Drawing.Point(604, 294);
             this.saveChart.Name = "saveChart";
             this.saveChart.Size = new System.Drawing.Size(47, 42);
             this.saveChart.TabIndex = 8;
@@ -571,27 +571,27 @@
             // 
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.productChart.Legends.Add(legend3);
+            chartArea11.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.productChart.Legends.Add(legend11);
             this.productChart.Location = new System.Drawing.Point(0, 0);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.productChart.Series.Add(series3);
-            this.productChart.Size = new System.Drawing.Size(646, 348);
+            series11.BorderWidth = 2;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.productChart.Series.Add(series11);
+            this.productChart.Size = new System.Drawing.Size(667, 348);
             this.productChart.TabIndex = 9;
             this.productChart.Text = "chart1";
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel11.Location = new System.Drawing.Point(318, 187);
+            this.panel11.Location = new System.Drawing.Point(314, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 344);
             this.panel11.TabIndex = 18;
@@ -602,13 +602,14 @@
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Controls.Add(this.deleteItem);
             this.panel6.Controls.Add(this.addItem);
+            this.panel6.Controls.Add(this.panel11);
             this.panel6.Controls.Add(this.listPicture);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.todoList);
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel6.Location = new System.Drawing.Point(30, 187);
+            this.panel6.Location = new System.Drawing.Point(11, 187);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(297, 344);
+            this.panel6.Size = new System.Drawing.Size(324, 344);
             this.panel6.TabIndex = 17;
             // 
             // deleteItem
@@ -618,7 +619,7 @@
             this.deleteItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deleteItem.FlatAppearance.BorderSize = 0;
             this.deleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteItem.Location = new System.Drawing.Point(238, 269);
+            this.deleteItem.Location = new System.Drawing.Point(261, 269);
             this.deleteItem.Name = "deleteItem";
             this.deleteItem.Size = new System.Drawing.Size(47, 27);
             this.deleteItem.TabIndex = 15;
@@ -632,7 +633,7 @@
             this.addItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.addItem.FlatAppearance.BorderSize = 0;
             this.addItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItem.Location = new System.Drawing.Point(238, 294);
+            this.addItem.Location = new System.Drawing.Point(261, 294);
             this.addItem.Name = "addItem";
             this.addItem.Size = new System.Drawing.Size(47, 42);
             this.addItem.TabIndex = 14;
@@ -644,7 +645,7 @@
             this.listPicture.BackColor = System.Drawing.Color.Transparent;
             this.listPicture.BackgroundImage = global::manageHub.Properties.Resources.baseline_list_alt_white_48dp;
             this.listPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.listPicture.Location = new System.Drawing.Point(214, 6);
+            this.listPicture.Location = new System.Drawing.Point(246, 6);
             this.listPicture.Name = "listPicture";
             this.listPicture.Size = new System.Drawing.Size(68, 69);
             this.listPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -674,7 +675,7 @@
             this.todoList.IntegralHeight = false;
             this.todoList.Location = new System.Drawing.Point(0, 81);
             this.todoList.Name = "todoList";
-            this.todoList.Size = new System.Drawing.Size(288, 263);
+            this.todoList.Size = new System.Drawing.Size(314, 263);
             this.todoList.TabIndex = 0;
             this.todoList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.TodoList_ItemCheck);
             // 
@@ -688,9 +689,9 @@
             this.panel3.Controls.Add(this.timer);
             this.panel3.Controls.Add(this.clock);
             this.panel3.Controls.Add(this.panel9);
-            this.panel3.Location = new System.Drawing.Point(669, 8);
+            this.panel3.Location = new System.Drawing.Point(683, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 163);
+            this.panel3.Size = new System.Drawing.Size(324, 163);
             this.panel3.TabIndex = 15;
             // 
             // label2
@@ -758,7 +759,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel9.Location = new System.Drawing.Point(307, 0);
+            this.panel9.Location = new System.Drawing.Point(314, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(10, 163);
             this.panel9.TabIndex = 5;
@@ -777,9 +778,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.weatherSymbol);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(340, 8);
+            this.panel2.Location = new System.Drawing.Point(347, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(317, 163);
+            this.panel2.Size = new System.Drawing.Size(324, 163);
             this.panel2.TabIndex = 16;
             // 
             // cityLabel
@@ -897,7 +898,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel4.Location = new System.Drawing.Point(307, 0);
+            this.panel4.Location = new System.Drawing.Point(314, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 163);
             this.panel4.TabIndex = 6;
@@ -909,9 +910,9 @@
             this.panel1.Controls.Add(this.welcomeBox);
             this.panel1.Controls.Add(this.ideaBox);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(30, 8);
+            this.panel1.Location = new System.Drawing.Point(11, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(298, 163);
+            this.panel1.Size = new System.Drawing.Size(324, 163);
             this.panel1.TabIndex = 14;
             // 
             // welcomeBox
@@ -941,7 +942,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel5.Location = new System.Drawing.Point(288, 0);
+            this.panel5.Location = new System.Drawing.Point(314, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 163);
             this.panel5.TabIndex = 6;
@@ -957,13 +958,14 @@
             // ShowPersonnels
             // 
             this.ShowPersonnels.BaseColor = System.Drawing.Color.White;
+            this.ShowPersonnels.Controls.Add(this.label32);
             this.ShowPersonnels.Controls.Add(this.adressLabel);
             this.ShowPersonnels.Controls.Add(this.eMailLabel);
             this.ShowPersonnels.Controls.Add(this.phoneLabel);
             this.ShowPersonnels.Controls.Add(this.label8);
             this.ShowPersonnels.Controls.Add(this.roleComboBox);
             this.ShowPersonnels.Controls.Add(this.rolesLabel);
-            this.ShowPersonnels.Controls.Add(this.surnameLabel);
+            this.ShowPersonnels.Controls.Add(this.lastNameLabel);
             this.ShowPersonnels.Controls.Add(this.nameLabel);
             this.ShowPersonnels.Controls.Add(this.salaryLabel);
             this.ShowPersonnels.Controls.Add(this.departLabel);
@@ -985,41 +987,43 @@
             // adressLabel
             // 
             this.adressLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.adressLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.adressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.adressLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adressLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adressLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.adressLabel.Location = new System.Drawing.Point(477, 268);
+            this.adressLabel.Location = new System.Drawing.Point(474, 260);
             this.adressLabel.Name = "adressLabel";
-            this.adressLabel.Size = new System.Drawing.Size(485, 241);
+            this.adressLabel.Size = new System.Drawing.Size(530, 250);
             this.adressLabel.TabIndex = 64;
             this.adressLabel.Text = "Adress:";
             // 
             // eMailLabel
             // 
             this.eMailLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.eMailLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.eMailLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.eMailLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eMailLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eMailLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eMailLabel.Location = new System.Drawing.Point(477, 218);
+            this.eMailLabel.Location = new System.Drawing.Point(474, 212);
             this.eMailLabel.Name = "eMailLabel";
-            this.eMailLabel.Size = new System.Drawing.Size(485, 28);
+            this.eMailLabel.Size = new System.Drawing.Size(529, 28);
             this.eMailLabel.TabIndex = 63;
             this.eMailLabel.Text = "e-Mail:";
+            this.eMailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // phoneLabel
             // 
             this.phoneLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.phoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.phoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phoneLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.phoneLabel.Location = new System.Drawing.Point(725, 168);
+            this.phoneLabel.Location = new System.Drawing.Point(744, 164);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(237, 28);
+            this.phoneLabel.Size = new System.Drawing.Size(260, 28);
             this.phoneLabel.TabIndex = 62;
             this.phoneLabel.Text = "Phone:";
+            this.phoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -1027,7 +1031,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label8.Location = new System.Drawing.Point(236, 25);
+            this.label8.Location = new System.Drawing.Point(233, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 61;
@@ -1037,9 +1041,9 @@
             // 
             this.roleComboBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleComboBox.FormattingEnabled = true;
-            this.roleComboBox.Location = new System.Drawing.Point(239, 43);
+            this.roleComboBox.Location = new System.Drawing.Point(236, 88);
             this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(186, 24);
+            this.roleComboBox.Size = new System.Drawing.Size(198, 24);
             this.roleComboBox.TabIndex = 40;
             this.roleComboBox.SelectedIndexChanged += new System.EventHandler(this.RoleComboBox_SelectedIndexChanged);
             this.roleComboBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RoleComboBox_MouseMove);
@@ -1047,39 +1051,40 @@
             // rolesLabel
             // 
             this.rolesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.rolesLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rolesLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rolesLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rolesLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolesLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rolesLabel.Location = new System.Drawing.Point(477, 168);
+            this.rolesLabel.Location = new System.Drawing.Point(474, 164);
             this.rolesLabel.Name = "rolesLabel";
-            this.rolesLabel.Size = new System.Drawing.Size(237, 28);
+            this.rolesLabel.Size = new System.Drawing.Size(260, 28);
             this.rolesLabel.TabIndex = 60;
             this.rolesLabel.Text = "Roles:";
+            this.rolesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // surnameLabel
+            // lastNameLabel
             // 
-            this.surnameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.surnameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.surnameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surnameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.surnameLabel.Location = new System.Drawing.Point(725, 68);
-            this.surnameLabel.Name = "surnameLabel";
-            this.surnameLabel.Size = new System.Drawing.Size(240, 28);
-            this.surnameLabel.TabIndex = 59;
-            this.surnameLabel.Text = "Surname:";
-            this.surnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lastNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.lastNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lastNameLabel.Location = new System.Drawing.Point(744, 68);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(260, 28);
+            this.lastNameLabel.TabIndex = 59;
+            this.lastNameLabel.Text = "Last Name:";
+            this.lastNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nameLabel
             // 
             this.nameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.nameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.nameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nameLabel.Location = new System.Drawing.Point(477, 68);
+            this.nameLabel.Location = new System.Drawing.Point(474, 68);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(237, 28);
+            this.nameLabel.Size = new System.Drawing.Size(260, 28);
             this.nameLabel.TabIndex = 58;
             this.nameLabel.Text = "Name:";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1087,12 +1092,12 @@
             // salaryLabel
             // 
             this.salaryLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.salaryLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.salaryLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.salaryLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salaryLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.salaryLabel.Location = new System.Drawing.Point(725, 118);
+            this.salaryLabel.Location = new System.Drawing.Point(744, 116);
             this.salaryLabel.Name = "salaryLabel";
-            this.salaryLabel.Size = new System.Drawing.Size(240, 28);
+            this.salaryLabel.Size = new System.Drawing.Size(260, 28);
             this.salaryLabel.TabIndex = 42;
             this.salaryLabel.Text = "Salary: ";
             this.salaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1100,13 +1105,13 @@
             // departLabel
             // 
             this.departLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.departLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.departLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.departLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.departLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.departLabel.Location = new System.Drawing.Point(477, 118);
+            this.departLabel.Location = new System.Drawing.Point(474, 116);
             this.departLabel.Name = "departLabel";
-            this.departLabel.Size = new System.Drawing.Size(237, 28);
+            this.departLabel.Size = new System.Drawing.Size(260, 28);
             this.departLabel.TabIndex = 41;
             this.departLabel.Text = "Depart: ";
             this.departLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1118,7 +1123,7 @@
             this.PersonnelInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.PersonnelInfoLabel.Location = new System.Drawing.Point(474, 25);
             this.PersonnelInfoLabel.Name = "PersonnelInfoLabel";
-            this.PersonnelInfoLabel.Size = new System.Drawing.Size(491, 28);
+            this.PersonnelInfoLabel.Size = new System.Drawing.Size(530, 28);
             this.PersonnelInfoLabel.TabIndex = 49;
             this.PersonnelInfoLabel.Text = "Personnel Info";
             this.PersonnelInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1126,13 +1131,14 @@
             // staffBox
             // 
             this.staffBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.staffBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.staffBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.staffBox.FormattingEnabled = true;
             this.staffBox.ItemHeight = 24;
-            this.staffBox.Location = new System.Drawing.Point(52, 74);
+            this.staffBox.Location = new System.Drawing.Point(11, 122);
             this.staffBox.Name = "staffBox";
-            this.staffBox.Size = new System.Drawing.Size(373, 436);
+            this.staffBox.Size = new System.Drawing.Size(426, 386);
             this.staffBox.TabIndex = 39;
             this.staffBox.TabStop = false;
             this.staffBox.SelectedIndexChanged += new System.EventHandler(this.StaffBox_SelectedIndexChanged);
@@ -1179,6 +1185,28 @@
             this.ManagePersonnels.ThemeName = null;
             this.ManagePersonnels.ToolTipText = null;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Arial", 9F);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label29.Location = new System.Drawing.Point(476, 188);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 15);
+            this.label29.TabIndex = 101;
+            this.label29.Text = "e-Mail";
+            // 
+            // addPersoneMail
+            // 
+            this.addPersoneMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersoneMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addPersoneMail.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.addPersoneMail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addPersoneMail.Location = new System.Drawing.Point(478, 209);
+            this.addPersoneMail.Name = "addPersoneMail";
+            this.addPersoneMail.Size = new System.Drawing.Size(248, 32);
+            this.addPersoneMail.TabIndex = 66;
+            // 
             // moneyUnit
             // 
             this.moneyUnit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1188,7 +1216,7 @@
             "₺",
             "$",
             "€"});
-            this.moneyUnit.Location = new System.Drawing.Point(729, 153);
+            this.moneyUnit.Location = new System.Drawing.Point(744, 150);
             this.moneyUnit.Name = "moneyUnit";
             this.moneyUnit.Size = new System.Drawing.Size(37, 32);
             this.moneyUnit.TabIndex = 99;
@@ -1197,20 +1225,21 @@
             // addPersonAdress
             // 
             this.addPersonAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonAdress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonAdress.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonAdress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonAdress.Location = new System.Drawing.Point(729, 281);
+            this.addPersonAdress.Location = new System.Drawing.Point(744, 270);
             this.addPersonAdress.Multiline = true;
             this.addPersonAdress.Name = "addPersonAdress";
-            this.addPersonAdress.Size = new System.Drawing.Size(236, 189);
-            this.addPersonAdress.TabIndex = 98;
+            this.addPersonAdress.Size = new System.Drawing.Size(260, 210);
+            this.addPersonAdress.TabIndex = 68;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Arial", 9F);
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label31.Location = new System.Drawing.Point(726, 258);
+            this.label31.Location = new System.Drawing.Point(741, 248);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(46, 15);
             this.label31.TabIndex = 97;
@@ -1219,20 +1248,21 @@
             // addPersonPhone
             // 
             this.addPersonPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonPhone.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonPhone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonPhone.Location = new System.Drawing.Point(729, 214);
+            this.addPersonPhone.Location = new System.Drawing.Point(744, 209);
             this.addPersonPhone.Mask = "(599) 000-0000";
             this.addPersonPhone.Name = "addPersonPhone";
-            this.addPersonPhone.Size = new System.Drawing.Size(236, 32);
-            this.addPersonPhone.TabIndex = 96;
+            this.addPersonPhone.Size = new System.Drawing.Size(260, 32);
+            this.addPersonPhone.TabIndex = 67;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Arial", 9F);
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label30.Location = new System.Drawing.Point(726, 192);
+            this.label30.Location = new System.Drawing.Point(741, 188);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(43, 15);
             this.label30.TabIndex = 95;
@@ -1247,7 +1277,7 @@
             this.RemovePerson.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.RemovePerson.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.RemovePerson.HoverTextColor = System.Drawing.Color.White;
-            this.RemovePerson.Location = new System.Drawing.Point(298, 492);
+            this.RemovePerson.Location = new System.Drawing.Point(308, 492);
             this.RemovePerson.Name = "RemovePerson";
             this.RemovePerson.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.RemovePerson.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -1258,7 +1288,8 @@
             this.RemovePerson.Size = new System.Drawing.Size(129, 32);
             this.RemovePerson.Style = MetroSet_UI.Design.Style.Light;
             this.RemovePerson.StyleManager = this.styleManager;
-            this.RemovePerson.TabIndex = 93;
+            this.RemovePerson.TabIndex = 0;
+            this.RemovePerson.TabStop = false;
             this.RemovePerson.Text = "Remove Person";
             this.RemovePerson.ThemeAuthor = null;
             this.RemovePerson.ThemeName = null;
@@ -1269,11 +1300,11 @@
             this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.label35.Font = new System.Drawing.Font("Arial", 15.75F);
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label35.Location = new System.Drawing.Point(57, 25);
+            this.label35.Location = new System.Drawing.Point(11, 25);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(370, 28);
+            this.label35.Size = new System.Drawing.Size(426, 28);
             this.label35.TabIndex = 84;
-            this.label35.Text = "Remove Person";
+            this.label35.Text = "Remove Personnel";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
@@ -1282,7 +1313,7 @@
             this.label34.BackColor = System.Drawing.SystemColors.Control;
             this.label34.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label34.Location = new System.Drawing.Point(238, 71);
+            this.label34.Location = new System.Drawing.Point(233, 70);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(80, 15);
             this.label34.TabIndex = 83;
@@ -1292,24 +1323,26 @@
             // 
             this.roleComboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleComboBox2.FormattingEnabled = true;
-            this.roleComboBox2.Location = new System.Drawing.Point(241, 89);
+            this.roleComboBox2.Location = new System.Drawing.Point(236, 88);
             this.roleComboBox2.Name = "roleComboBox2";
-            this.roleComboBox2.Size = new System.Drawing.Size(186, 24);
-            this.roleComboBox2.TabIndex = 82;
+            this.roleComboBox2.Size = new System.Drawing.Size(198, 24);
+            this.roleComboBox2.TabIndex = 0;
+            this.roleComboBox2.TabStop = false;
             this.roleComboBox2.SelectedIndexChanged += new System.EventHandler(this.RoleComboBox2_SelectedIndexChanged);
             this.roleComboBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RoleComboBox2_MouseMove);
             // 
             // staffBox2
             // 
             this.staffBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.staffBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.staffBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.staffBox2.FormattingEnabled = true;
             this.staffBox2.ItemHeight = 24;
-            this.staffBox2.Location = new System.Drawing.Point(54, 116);
+            this.staffBox2.Location = new System.Drawing.Point(11, 122);
             this.staffBox2.Name = "staffBox2";
-            this.staffBox2.Size = new System.Drawing.Size(373, 364);
-            this.staffBox2.TabIndex = 81;
+            this.staffBox2.Size = new System.Drawing.Size(426, 362);
+            this.staffBox2.TabIndex = 0;
             this.staffBox2.TabStop = false;
             // 
             // AddPeson
@@ -1321,7 +1354,7 @@
             this.AddPeson.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.AddPeson.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.AddPeson.HoverTextColor = System.Drawing.Color.White;
-            this.AddPeson.Location = new System.Drawing.Point(843, 492);
+            this.AddPeson.Location = new System.Drawing.Point(884, 492);
             this.AddPeson.Name = "AddPeson";
             this.AddPeson.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.AddPeson.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -1332,7 +1365,8 @@
             this.AddPeson.Size = new System.Drawing.Size(120, 32);
             this.AddPeson.Style = MetroSet_UI.Design.Style.Light;
             this.AddPeson.StyleManager = this.styleManager;
-            this.AddPeson.TabIndex = 72;
+            this.AddPeson.TabIndex = 0;
+            this.AddPeson.TabStop = false;
             this.AddPeson.Text = "Add Person";
             this.AddPeson.ThemeAuthor = null;
             this.AddPeson.ThemeName = null;
@@ -1343,7 +1377,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label15.Location = new System.Drawing.Point(726, 131);
+            this.label15.Location = new System.Drawing.Point(741, 129);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 15);
             this.label15.TabIndex = 71;
@@ -1352,11 +1386,12 @@
             // addPersonSalary
             // 
             this.addPersonSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonSalary.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonSalary.Location = new System.Drawing.Point(770, 153);
+            this.addPersonSalary.Location = new System.Drawing.Point(787, 150);
             this.addPersonSalary.Name = "addPersonSalary";
-            this.addPersonSalary.Size = new System.Drawing.Size(195, 32);
+            this.addPersonSalary.Size = new System.Drawing.Size(217, 32);
             this.addPersonSalary.TabIndex = 65;
             // 
             // deleteRole
@@ -1364,7 +1399,7 @@
             this.deleteRole.AutoSize = true;
             this.deleteRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.deleteRole.Location = new System.Drawing.Point(567, 486);
+            this.deleteRole.Location = new System.Drawing.Point(568, 486);
             this.deleteRole.Name = "deleteRole";
             this.deleteRole.Size = new System.Drawing.Size(72, 15);
             this.deleteRole.TabIndex = 58;
@@ -1378,7 +1413,7 @@
             this.addNewRole.AutoSize = true;
             this.addNewRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.addNewRole.Location = new System.Drawing.Point(476, 486);
+            this.addNewRole.Location = new System.Drawing.Point(477, 486);
             this.addNewRole.Name = "addNewRole";
             this.addNewRole.Size = new System.Drawing.Size(85, 15);
             this.addNewRole.TabIndex = 59;
@@ -1392,7 +1427,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 9F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label13.Location = new System.Drawing.Point(476, 258);
+            this.label13.Location = new System.Drawing.Point(476, 248);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 15);
             this.label13.TabIndex = 70;
@@ -1401,13 +1436,14 @@
             // roleBox
             // 
             this.roleBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.roleBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roleBox.CheckOnClick = true;
             this.roleBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.roleBox.FormattingEnabled = true;
-            this.roleBox.Location = new System.Drawing.Point(478, 286);
+            this.roleBox.Location = new System.Drawing.Point(479, 270);
             this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(235, 184);
+            this.roleBox.Size = new System.Drawing.Size(248, 210);
             this.roleBox.TabIndex = 60;
             // 
             // label14
@@ -1415,7 +1451,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label14.Location = new System.Drawing.Point(726, 70);
+            this.label14.Location = new System.Drawing.Point(741, 70);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 15);
             this.label14.TabIndex = 69;
@@ -1424,11 +1460,12 @@
             // addPersonLastName
             // 
             this.addPersonLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonLastName.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonLastName.Location = new System.Drawing.Point(729, 92);
+            this.addPersonLastName.Location = new System.Drawing.Point(744, 91);
             this.addPersonLastName.Name = "addPersonLastName";
-            this.addPersonLastName.Size = new System.Drawing.Size(236, 32);
+            this.addPersonLastName.Size = new System.Drawing.Size(260, 32);
             this.addPersonLastName.TabIndex = 63;
             // 
             // label11
@@ -1436,7 +1473,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label11.Location = new System.Drawing.Point(476, 131);
+            this.label11.Location = new System.Drawing.Point(476, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 15);
             this.label11.TabIndex = 68;
@@ -1445,11 +1482,12 @@
             // addPersonDepart
             // 
             this.addPersonDepart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonDepart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonDepart.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonDepart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonDepart.Location = new System.Drawing.Point(478, 153);
+            this.addPersonDepart.Location = new System.Drawing.Point(478, 150);
             this.addPersonDepart.Name = "addPersonDepart";
-            this.addPersonDepart.Size = new System.Drawing.Size(236, 32);
+            this.addPersonDepart.Size = new System.Drawing.Size(248, 32);
             this.addPersonDepart.TabIndex = 64;
             // 
             // label12
@@ -1466,11 +1504,12 @@
             // addPersonName
             // 
             this.addPersonName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.addPersonName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPersonName.Font = new System.Drawing.Font("Arial", 15.75F);
             this.addPersonName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersonName.Location = new System.Drawing.Point(478, 92);
+            this.addPersonName.Location = new System.Drawing.Point(478, 91);
             this.addPersonName.Name = "addPersonName";
-            this.addPersonName.Size = new System.Drawing.Size(236, 32);
+            this.addPersonName.Size = new System.Drawing.Size(248, 32);
             this.addPersonName.TabIndex = 62;
             // 
             // AddPersonLabel
@@ -1480,9 +1519,9 @@
             this.AddPersonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.AddPersonLabel.Location = new System.Drawing.Point(474, 25);
             this.AddPersonLabel.Name = "AddPersonLabel";
-            this.AddPersonLabel.Size = new System.Drawing.Size(491, 28);
+            this.AddPersonLabel.Size = new System.Drawing.Size(530, 28);
             this.AddPersonLabel.TabIndex = 66;
-            this.AddPersonLabel.Text = "Add Person";
+            this.AddPersonLabel.Text = "Add Personnel";
             this.AddPersonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroSetTabPage1
@@ -1501,26 +1540,17 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // label29
+            // label32
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 9F);
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label29.Location = new System.Drawing.Point(476, 192);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(40, 15);
-            this.label29.TabIndex = 101;
-            this.label29.Text = "e-Mail";
-            // 
-            // addPersoneMail
-            // 
-            this.addPersoneMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.addPersoneMail.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.addPersoneMail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addPersoneMail.Location = new System.Drawing.Point(478, 214);
-            this.addPersoneMail.Name = "addPersoneMail";
-            this.addPersoneMail.Size = new System.Drawing.Size(236, 32);
-            this.addPersoneMail.TabIndex = 100;
+            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label32.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label32.Location = new System.Drawing.Point(11, 25);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(426, 28);
+            this.label32.TabIndex = 65;
+            this.label32.Text = "Personnel List";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DashBoardForm
             // 
@@ -1630,7 +1660,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox roleComboBox;
         private System.Windows.Forms.Label rolesLabel;
-        private System.Windows.Forms.Label surnameLabel;
+        private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label salaryLabel;
         private System.Windows.Forms.Label departLabel;
@@ -1667,5 +1697,6 @@
         private System.Windows.Forms.ComboBox moneyUnit;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox addPersoneMail;
+        private System.Windows.Forms.Label label32;
     }
 }

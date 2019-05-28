@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,6 +79,7 @@ namespace manageHub
             AddRoleComboBox();
             AddRoleComboBox2();
             CallRoles();
+            chart2();
             //-------------------------------------------------------------------------------------------
 
             //------------------------------------Data selections----------------------------------------
@@ -96,7 +99,6 @@ namespace manageHub
             {
                 moneyUnit.SelectedIndex = 2;
             }
-
             //-------------------------------------------------------------------------------------------
 
             //---------------------------------Testing Inheritance---------------------------------------
@@ -364,61 +366,157 @@ namespace manageHub
             }
         }
 
+        string[] seasons = new string[6];
         private void SplineChart()
         {
-            Random rndm = new Random();
+            //Series series = new Series();
+            //Series seriess = new Series();
+            //productChart.Titles.Add("Company Expenditure Average");
 
             string[] seasons = { "January", "February", "March", "April", "May", "June", "July", "August",
                 "September", "October", "November", "December"};
 
-            productChart.ChartAreas[0].AxisX.IsMarginVisible = false;
+            //productChart.ChartAreas[0].AxisX.Minimum = 12;
+            //productChart.ChartAreas[0].AxisX.
 
-            this.productChart.Series.Clear();
-            this.productChart.Titles.Add("Balance");
+            /*seasons[0] = "January" + "-" + "February";
+            seasons[1] = "March" + "-" + "April";
+            seasons[2] = "May" + "-" + "June";
+            seasons[3] = "July" + "-" + "August";
+            seasons[4] = "September" + "-" + "October";
+            seasons[5] = "November" + "-" + "December";*/
 
-            Series series = this.productChart.Series.Add("Products Sold");
-            Series seriess = this.productChart.Series.Add("Personnel");
-
-            series.BorderWidth = 2;
-            seriess.BorderWidth = 2;
-
-            series.ChartType = SeriesChartType.Spline;
-            seriess.ChartType = SeriesChartType.Spline;
-
-            foreach (string season in seasons)
+            try
             {
-                series.Points.AddXY(season, rndm.NextDouble() * 15);
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT pID FROM personnel", conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+                int personnelCount = 0;
+                while (reader.Read())
+                {
+                    personnelCount += 1;
+                    //seriess.Points.AddY(personnelCount);
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
             }
 
-            /*series.Points.AddXY("January", 18);
-            series.Points.AddXY("February", 16);
-            series.Points.AddXY("March", 10);
-            series.Points.AddXY("April", 20);
-            series.Points.AddXY("May", 21);
-            series.Points.AddXY("June", 14);
-            series.Points.AddXY("July", 9);
-            series.Points.AddXY("August", 5);
-            series.Points.AddXY("September", 3);
-            series.Points.AddXY("October", 5);
-            series.Points.AddXY("November", 10);
-            series.Points.AddXY("December", 5);*/
+            //---------------------------------------Chart 2---------------------------------------------
 
-            seriess.Points.AddY(5);
-            seriess.Points.AddY(5);
-            seriess.Points.AddY(6);
-            seriess.Points.AddY(6);
-            seriess.Points.AddY(6);
-            seriess.Points.AddY(8);
-            seriess.Points.AddY(8);
-            seriess.Points.AddY(8);
-            seriess.Points.AddY(5);
-            seriess.Points.AddY(7);
-            seriess.Points.AddY(6);
-            seriess.Points.AddY(9);
+
+            //personnelRoleChart
         }
 
+        private void chart2()
+        {
+            Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0:n0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            pieChart1.Series = new LiveCharts.SeriesCollection();
 
-        private void SaveChart_Click(object sender, EventArgs e)
+
+            PieSeries pie = new PieSeries();
+            pie.Title = "Programmer";
+            pie.Values = new ChartValues<double> { Convert.ToDouble(1) };
+            pie.DataLabels = true;
+            pie.LabelPoint = labelPoint;
+            pieChart1.Series.Add(pie);
+            
+            
+            PieSeries pie1 = new PieSeries();
+            pie1.Title = "Staff";
+            pie1.Values = new ChartValues<double> { Convert.ToDouble(2) };
+            pie1.DataLabels = true;
+            pie1.LabelPoint = labelPoint;
+            pieChart1.Series.Add(pie1);
+            pieChart1.LegendLocation = LegendLocation.Right;
+
+            /*PieSeries pie2 = new PieSeries();
+            pie2.Title = "Yellow";
+            pie2.Values = new ChartValues<double> { Convert.ToDouble(40) };
+            pie2.DataLabels = true;
+            pie2.LabelPoint = labelPoint;
+            pieChart1.Series.Add(pie2);*/
+            
+        }
+
+        /*private void PersonnelRoleChart_Customize(object sender, EventArgs e)
+        {
+            List<string> roles = new List<string>();
+            List<int> points = new List<int>();
+            points.Add(5);
+            points.Add(10);
+            int low = 10;
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT DISTINCT pRole FROM personnel", conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    roles.Add(reader["pRole"].ToString())
+                    low--;
+                }
+
+                for (int i = 0; i < roles.Count; i++)
+                {
+                    Series series = this.personnelRoleChart.Series.Add(roles[i]);
+                    series.ChartType = SeriesChartType.Pie;
+                    series.Points.Add(points[i]);
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            /*int i = 0;
+            bool exit = true;
+
+            try
+            {
+                Console.WriteLine(roles[i]);
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM personnel WHERE [pRole] = @pRole", conn);
+                cmd.Parameters.AddWithValue("@pRole", roles[i]);
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    //Console.WriteLine(reader["pRole"].ToString());
+                    
+                }
+
+                if ((i + 1) >= roles.Count)
+                {
+                    exit = false;
+                }
+                i++;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            while (exit)
+            {
+                
+            }
+        }*/
+
+            private void SaveChart_Click(object sender, EventArgs e)
         {
             String s = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + "\\Chart.png";
             productChart.SaveImage(s, ChartImageFormat.Png);
@@ -428,6 +526,7 @@ namespace manageHub
 
         private void AddItemStaffBox()
         {
+            staffBox.Items.Clear();
             try
             {
                 conn.Open();
@@ -437,7 +536,6 @@ namespace manageHub
 
                 while (reader.Read())
                 {
-                    Console.WriteLine(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
                     staffBox.Items.Add(reader["pName"].ToString() + " " + reader["pLastName"].ToString());
                 }
             }
@@ -460,7 +558,7 @@ namespace manageHub
             }
             else
             {
-                nameLabel.Text ="Name: " + staffBox.SelectedItem.ToString().Substring(0, staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
+                nameLabel.Text = "Name: " + staffBox.SelectedItem.ToString().Substring(0, staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
                 lastNameLabel.Text = "Last Name: " + staffBox.SelectedItem.ToString().Substring(staffBox.SelectedItem.ToString().LastIndexOf(' ')).Trim();
             }
 
@@ -734,11 +832,11 @@ namespace manageHub
         {
             addPersonName.ResetText();
             addPersonLastName.ResetText();
-            addPersonDepart.ResetText(); 
+            addPersonDepart.ResetText();
             addPersonSalary.ResetText();
             addPersonMail.ResetText();
             addPersonPhone.ResetText();
-            foreach(int i in roleBox.CheckedIndices)
+            foreach (int i in roleBox.CheckedIndices)
             {
                 roleBox.SetItemCheckState(i, CheckState.Unchecked);
             }
@@ -810,7 +908,7 @@ namespace manageHub
             Console.WriteLine(staffBox2.GetItemText(staffBox2.SelectedItem.ToString().Substring(staffBox2.SelectedItem.ToString().LastIndexOf(' '))).Trim());
             DialogResult result;
             result = MessageBox.Show("Are you sure want to remove selected person?", "Manage Hub", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 try
                 {
@@ -833,6 +931,46 @@ namespace manageHub
             else
             {
                 return;
+            }
+        }
+
+        private void MainTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MainTab.SelectedIndex == 2)
+            {
+                AddItemStaffBox();
+            }
+
+            if (MainTab.SelectedIndex == 3)
+            {
+                int currentPerson = 0;
+                try
+                {
+                    conn.Open();
+                    OleDbCommand cmd = new OleDbCommand("SELECT pID FROM personnel", conn);
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        currentPerson += 1;
+                    }
+                    if (currentPerson < 10)
+                    {
+                        labelCurrentStaff.Text = "0" + Convert.ToString(currentPerson);
+                    }
+                    else
+                    {
+                        labelCurrentStaff.Text = Convert.ToString(currentPerson);
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
     }

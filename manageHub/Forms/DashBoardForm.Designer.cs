@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,8 +63,6 @@
             this.DashBoard = new MetroSet_UI.Child.MetroSetTabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.saveChart = new System.Windows.Forms.Button();
-            this.productChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel6 = new System.Windows.Forms.Panel();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
@@ -110,6 +108,8 @@
             this.PersonnelInfoLabel = new System.Windows.Forms.Label();
             this.staffBox = new System.Windows.Forms.ListBox();
             this.ManagePersonnels = new MetroSet_UI.Child.MetroSetTabPage();
+            this.RemovePerson = new System.Windows.Forms.Button();
+            this.AddPerson = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.addPersonMail = new System.Windows.Forms.TextBox();
             this.moneyUnit = new System.Windows.Forms.ComboBox();
@@ -134,15 +134,45 @@
             this.label12 = new System.Windows.Forms.Label();
             this.addPersonName = new System.Windows.Forms.TextBox();
             this.AddPersonLabel = new System.Windows.Forms.Label();
+            this.Chart = new MetroSet_UI.Child.MetroSetTabPage();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.labelCurrentStaff = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.saveChart = new System.Windows.Forms.Button();
+            this.productChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Contact = new MetroSet_UI.Child.MetroSetTabPage();
+            this.sendMssg = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.AddPerson = new System.Windows.Forms.Button();
-            this.RemovePerson = new System.Windows.Forms.Button();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.pieChart1 = new LiveCharts.Wpf.PieChart();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.DashBoard.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productChart)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).BeginInit();
             this.panel3.SuspendLayout();
@@ -152,6 +182,14 @@
             this.panel1.SuspendLayout();
             this.ShowPersonnels.SuspendLayout();
             this.ManagePersonnels.SuspendLayout();
+            this.Chart.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productChart)).BeginInit();
+            this.Contact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -494,12 +532,14 @@
             this.MainTab.Controls.Add(this.DashBoard);
             this.MainTab.Controls.Add(this.ShowPersonnels);
             this.MainTab.Controls.Add(this.ManagePersonnels);
+            this.MainTab.Controls.Add(this.Chart);
+            this.MainTab.Controls.Add(this.Contact);
             this.MainTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
             this.MainTab.Name = "MainTab";
-            this.MainTab.SelectedIndex = 0;
+            this.MainTab.SelectedIndex = 3;
             this.MainTab.Size = new System.Drawing.Size(1024, 584);
             this.MainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTab.Speed = 30;
@@ -511,6 +551,7 @@
             this.MainTab.ThemeAuthor = null;
             this.MainTab.ThemeName = null;
             this.MainTab.UseAnimation = false;
+            this.MainTab.SelectedIndexChanged += new System.EventHandler(this.MainTab_SelectedIndexChanged);
             // 
             // DashBoard
             // 
@@ -546,47 +587,10 @@
             // 
             this.panel7.BackgroundImage = global::manageHub.Properties.Resources.dash5;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Controls.Add(this.saveChart);
-            this.panel7.Controls.Add(this.productChart);
             this.panel7.Location = new System.Drawing.Point(347, 187);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(639, 344);
+            this.panel7.Size = new System.Drawing.Size(660, 344);
             this.panel7.TabIndex = 19;
-            // 
-            // saveChart
-            // 
-            this.saveChart.BackColor = System.Drawing.Color.White;
-            this.saveChart.BackgroundImage = global::manageHub.Properties.Resources.baseline_save_black_36dp;
-            this.saveChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.saveChart.FlatAppearance.BorderSize = 0;
-            this.saveChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveChart.Location = new System.Drawing.Point(604, 294);
-            this.saveChart.Name = "saveChart";
-            this.saveChart.Size = new System.Drawing.Size(47, 42);
-            this.saveChart.TabIndex = 8;
-            this.saveChart.UseVisualStyleBackColor = false;
-            this.saveChart.Click += new System.EventHandler(this.SaveChart_Click);
-            // 
-            // productChart
-            // 
-            this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
-            this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.productChart.Legends.Add(legend5);
-            this.productChart.Location = new System.Drawing.Point(0, 0);
-            this.productChart.Name = "productChart";
-            this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.productChart.Series.Add(series5);
-            this.productChart.Size = new System.Drawing.Size(667, 348);
-            this.productChart.TabIndex = 9;
-            this.productChart.Text = "chart1";
             // 
             // panel6
             // 
@@ -1197,6 +1201,36 @@
             this.ManagePersonnels.ThemeName = null;
             this.ManagePersonnels.ToolTipText = null;
             // 
+            // RemovePerson
+            // 
+            this.RemovePerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.RemovePerson.FlatAppearance.BorderSize = 0;
+            this.RemovePerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemovePerson.Font = new System.Drawing.Font("Arial", 12F);
+            this.RemovePerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RemovePerson.Location = new System.Drawing.Point(309, 492);
+            this.RemovePerson.Name = "RemovePerson";
+            this.RemovePerson.Size = new System.Drawing.Size(128, 32);
+            this.RemovePerson.TabIndex = 103;
+            this.RemovePerson.Text = "Remove Person";
+            this.RemovePerson.UseVisualStyleBackColor = false;
+            this.RemovePerson.Click += new System.EventHandler(this.RemovePerson_Click);
+            // 
+            // AddPerson
+            // 
+            this.AddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.AddPerson.FlatAppearance.BorderSize = 0;
+            this.AddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPerson.Font = new System.Drawing.Font("Arial", 12F);
+            this.AddPerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddPerson.Location = new System.Drawing.Point(884, 492);
+            this.AddPerson.Name = "AddPerson";
+            this.AddPerson.Size = new System.Drawing.Size(120, 32);
+            this.AddPerson.TabIndex = 102;
+            this.AddPerson.Text = "Add Person";
+            this.AddPerson.UseVisualStyleBackColor = false;
+            this.AddPerson.Click += new System.EventHandler(this.AddPerson_Click);
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1482,6 +1516,430 @@
             this.AddPersonLabel.Text = "Add Personnel";
             this.AddPersonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Chart
+            // 
+            this.Chart.BaseColor = System.Drawing.Color.White;
+            this.Chart.Controls.Add(this.panel15);
+            this.Chart.Controls.Add(this.label49);
+            this.Chart.Controls.Add(this.panel13);
+            this.Chart.Controls.Add(this.label46);
+            this.Chart.Controls.Add(this.panel14);
+            this.Chart.Controls.Add(this.label47);
+            this.Chart.Controls.Add(this.panel12);
+            this.Chart.Controls.Add(this.label43);
+            this.Chart.Controls.Add(this.label42);
+            this.Chart.Controls.Add(this.label41);
+            this.Chart.Controls.Add(this.button2);
+            this.Chart.Controls.Add(this.saveChart);
+            this.Chart.Controls.Add(this.productChart);
+            this.Chart.Controls.Add(this.elementHost1);
+            this.Chart.ImageIndex = 0;
+            this.Chart.ImageKey = null;
+            this.Chart.Location = new System.Drawing.Point(4, 42);
+            this.Chart.Name = "Chart";
+            this.Chart.Size = new System.Drawing.Size(1016, 538);
+            this.Chart.Style = MetroSet_UI.Design.Style.Light;
+            this.Chart.StyleManager = this.styleManager;
+            this.Chart.TabIndex = 4;
+            this.Chart.Text = "Charts";
+            this.Chart.ThemeAuthor = null;
+            this.Chart.ThemeName = null;
+            this.Chart.ToolTipText = null;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.label48);
+            this.panel15.Location = new System.Drawing.Point(259, 33);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(243, 199);
+            this.panel15.TabIndex = 74;
+            // 
+            // label48
+            // 
+            this.label48.BackColor = System.Drawing.Color.Olive;
+            this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label48.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(0, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(241, 197);
+            this.label48.TabIndex = 0;
+            this.label48.Text = "00";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label49.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label49.Location = new System.Drawing.Point(259, 6);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(243, 28);
+            this.label49.TabIndex = 75;
+            this.label49.Text = "Number of Current Staff";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.label45);
+            this.panel13.Location = new System.Drawing.Point(3, 33);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(243, 199);
+            this.panel13.TabIndex = 72;
+            // 
+            // label45
+            // 
+            this.label45.BackColor = System.Drawing.Color.DarkCyan;
+            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label45.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(0, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(241, 197);
+            this.label45.TabIndex = 0;
+            this.label45.Text = "00";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label46
+            // 
+            this.label46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label46.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label46.Location = new System.Drawing.Point(3, 6);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(243, 28);
+            this.label46.TabIndex = 73;
+            this.label46.Text = "Number of Current Staff";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.label44);
+            this.panel14.Location = new System.Drawing.Point(514, 34);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(247, 199);
+            this.panel14.TabIndex = 70;
+            // 
+            // label44
+            // 
+            this.label44.BackColor = System.Drawing.Color.IndianRed;
+            this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label44.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(0, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(245, 197);
+            this.label44.TabIndex = 0;
+            this.label44.Text = "00";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            this.label47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label47.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label47.Location = new System.Drawing.Point(514, 7);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(247, 28);
+            this.label47.TabIndex = 71;
+            this.label47.Text = "Number of Current Staff";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.labelCurrentStaff);
+            this.panel12.Location = new System.Drawing.Point(770, 34);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(243, 199);
+            this.panel12.TabIndex = 0;
+            // 
+            // labelCurrentStaff
+            // 
+            this.labelCurrentStaff.BackColor = System.Drawing.Color.Chocolate;
+            this.labelCurrentStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCurrentStaff.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentStaff.ForeColor = System.Drawing.Color.White;
+            this.labelCurrentStaff.Location = new System.Drawing.Point(0, 0);
+            this.labelCurrentStaff.Name = "labelCurrentStaff";
+            this.labelCurrentStaff.Size = new System.Drawing.Size(241, 197);
+            this.labelCurrentStaff.TabIndex = 0;
+            this.labelCurrentStaff.Text = "00";
+            this.labelCurrentStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label43.Location = new System.Drawing.Point(770, 7);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(243, 28);
+            this.label43.TabIndex = 69;
+            this.label43.Text = "Number of Current Staff";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label42.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label42.Location = new System.Drawing.Point(514, 247);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(499, 28);
+            this.label42.TabIndex = 68;
+            this.label42.Text = "Role Distribution of Personnel ";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.label41.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label41.Location = new System.Drawing.Point(3, 247);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(499, 28);
+            this.label41.TabIndex = 67;
+            this.label41.Text = "Add Personnel";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = global::manageHub.Properties.Resources.baseline_save_black_36dp;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(945, 488);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 42);
+            this.button2.TabIndex = 17;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // saveChart
+            // 
+            this.saveChart.BackColor = System.Drawing.Color.White;
+            this.saveChart.BackgroundImage = global::manageHub.Properties.Resources.baseline_save_black_36dp;
+            this.saveChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.saveChart.FlatAppearance.BorderSize = 0;
+            this.saveChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveChart.Location = new System.Drawing.Point(432, 488);
+            this.saveChart.Name = "saveChart";
+            this.saveChart.Size = new System.Drawing.Size(47, 42);
+            this.saveChart.TabIndex = 13;
+            this.saveChart.UseVisualStyleBackColor = false;
+            this.saveChart.Click += new System.EventHandler(this.SaveChart_Click);
+            // 
+            // productChart
+            // 
+            this.productChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.productChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
+            this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
+            this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.productChart.Legends.Add(legend1);
+            this.productChart.Location = new System.Drawing.Point(3, 275);
+            this.productChart.Name = "productChart";
+            this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series1);
+            this.productChart.Size = new System.Drawing.Size(499, 263);
+            this.productChart.TabIndex = 14;
+            this.productChart.TabStop = false;
+            // 
+            // Contact
+            // 
+            this.Contact.BaseColor = System.Drawing.Color.White;
+            this.Contact.Controls.Add(this.sendMssg);
+            this.Contact.Controls.Add(this.pictureBox1);
+            this.Contact.Controls.Add(this.textBox8);
+            this.Contact.Controls.Add(this.label36);
+            this.Contact.Controls.Add(this.maskedTextBox1);
+            this.Contact.Controls.Add(this.label40);
+            this.Contact.Controls.Add(this.label39);
+            this.Contact.Controls.Add(this.textBox5);
+            this.Contact.Controls.Add(this.label38);
+            this.Contact.Controls.Add(this.label37);
+            this.Contact.Controls.Add(this.textBox7);
+            this.Contact.Controls.Add(this.textBox6);
+            this.Contact.Controls.Add(this.label33);
+            this.Contact.ImageIndex = 0;
+            this.Contact.ImageKey = null;
+            this.Contact.Location = new System.Drawing.Point(4, 42);
+            this.Contact.Name = "Contact";
+            this.Contact.Size = new System.Drawing.Size(1016, 538);
+            this.Contact.Style = MetroSet_UI.Design.Style.Light;
+            this.Contact.StyleManager = this.styleManager;
+            this.Contact.TabIndex = 3;
+            this.Contact.Text = "Contact Us";
+            this.Contact.ThemeAuthor = null;
+            this.Contact.ThemeName = null;
+            this.Contact.ToolTipText = null;
+            // 
+            // sendMssg
+            // 
+            this.sendMssg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.sendMssg.FlatAppearance.BorderSize = 0;
+            this.sendMssg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendMssg.Font = new System.Drawing.Font("Arial", 12F);
+            this.sendMssg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sendMssg.Location = new System.Drawing.Point(884, 492);
+            this.sendMssg.Name = "sendMssg";
+            this.sendMssg.Size = new System.Drawing.Size(120, 32);
+            this.sendMssg.TabIndex = 109;
+            this.sendMssg.Text = "Send It";
+            this.sendMssg.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(437, 538);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.textBox8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox8.Location = new System.Drawing.Point(467, 243);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(537, 230);
+            this.textBox8.TabIndex = 106;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Arial", 9F);
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label36.Location = new System.Drawing.Point(464, 221);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(58, 15);
+            this.label36.TabIndex = 107;
+            this.label36.Text = "Message";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.maskedTextBox1.Location = new System.Drawing.Point(744, 164);
+            this.maskedTextBox1.Mask = "(599) 000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(260, 32);
+            this.maskedTextBox1.TabIndex = 104;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Arial", 9F);
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label40.Location = new System.Drawing.Point(741, 143);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(43, 15);
+            this.label40.TabIndex = 105;
+            this.label40.Text = "Phone";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 9F);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label39.Location = new System.Drawing.Point(464, 143);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(40, 15);
+            this.label39.TabIndex = 103;
+            this.label39.Text = "e-Mail";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox5.Location = new System.Drawing.Point(466, 164);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(260, 32);
+            this.textBox5.TabIndex = 102;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Arial", 9F);
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label38.Location = new System.Drawing.Point(741, 70);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(68, 15);
+            this.label38.TabIndex = 92;
+            this.label38.Text = "Last Name";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Arial", 9F);
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label37.Location = new System.Drawing.Point(463, 70);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(41, 15);
+            this.label37.TabIndex = 90;
+            this.label37.Text = "Name";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox7.Location = new System.Drawing.Point(466, 91);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(260, 32);
+            this.textBox7.TabIndex = 89;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.textBox6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox6.Location = new System.Drawing.Point(744, 91);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(260, 32);
+            this.textBox6.TabIndex = 87;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Gray;
+            this.label33.Location = new System.Drawing.Point(601, 23);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(262, 32);
+            this.label33.TabIndex = 85;
+            this.label33.Text = "Send Us A Message";
+            // 
             // metroSetTabPage1
             // 
             this.metroSetTabPage1.BaseColor = System.Drawing.Color.White;
@@ -1498,35 +1956,15 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // AddPerson
+            // elementHost1
             // 
-            this.AddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.AddPerson.FlatAppearance.BorderSize = 0;
-            this.AddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddPerson.Font = new System.Drawing.Font("Arial", 12F);
-            this.AddPerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddPerson.Location = new System.Drawing.Point(884, 492);
-            this.AddPerson.Name = "AddPerson";
-            this.AddPerson.Size = new System.Drawing.Size(120, 32);
-            this.AddPerson.TabIndex = 102;
-            this.AddPerson.Text = "Add Person";
-            this.AddPerson.UseVisualStyleBackColor = false;
-            this.AddPerson.Click += new System.EventHandler(this.AddPerson_Click);
-            // 
-            // RemovePerson
-            // 
-            this.RemovePerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.RemovePerson.FlatAppearance.BorderSize = 0;
-            this.RemovePerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemovePerson.Font = new System.Drawing.Font("Arial", 12F);
-            this.RemovePerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RemovePerson.Location = new System.Drawing.Point(309, 492);
-            this.RemovePerson.Name = "RemovePerson";
-            this.RemovePerson.Size = new System.Drawing.Size(128, 32);
-            this.RemovePerson.TabIndex = 103;
-            this.RemovePerson.Text = "Remove Person";
-            this.RemovePerson.UseVisualStyleBackColor = false;
-            this.RemovePerson.Click += new System.EventHandler(this.RemovePerson_Click);
+            this.elementHost1.BackColor = System.Drawing.Color.White;
+            this.elementHost1.Location = new System.Drawing.Point(514, 275);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(499, 263);
+            this.elementHost1.TabIndex = 76;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.pieChart1;
             // 
             // DashBoardForm
             // 
@@ -1547,8 +1985,6 @@
             this.panel10.PerformLayout();
             this.MainTab.ResumeLayout(false);
             this.DashBoard.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productChart)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).EndInit();
@@ -1564,6 +2000,15 @@
             this.ShowPersonnels.PerformLayout();
             this.ManagePersonnels.ResumeLayout(false);
             this.ManagePersonnels.PerformLayout();
+            this.Chart.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productChart)).EndInit();
+            this.Contact.ResumeLayout(false);
+            this.Contact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1599,7 +2044,6 @@
         private MetroSet_UI.Controls.MetroSetTabControl MainTab;
         private MetroSet_UI.Child.MetroSetTabPage DashBoard;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button saveChart;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel6;
@@ -1632,7 +2076,6 @@
         private System.Windows.Forms.Panel panel5;
         private MetroSet_UI.Child.MetroSetTabPage ShowPersonnels;
         private MetroSet_UI.Child.MetroSetTabPage ManagePersonnels;
-        private System.Windows.Forms.DataVisualization.Charting.Chart productChart;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox roleComboBox;
         private System.Windows.Forms.Label rolesLabel;
@@ -1674,5 +2117,39 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button AddPerson;
         private System.Windows.Forms.Button RemovePerson;
+        private MetroSet_UI.Child.MetroSetTabPage Contact;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button sendMssg;
+        private MetroSet_UI.Child.MetroSetTabPage Chart;
+        private System.Windows.Forms.Button saveChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart productChart;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelCurrentStaff;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.PieChart pieChart1;
     }
 }

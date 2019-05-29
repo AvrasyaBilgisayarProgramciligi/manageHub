@@ -332,7 +332,9 @@ namespace manageHub
                 date += mm;
             }
             date += "/";
-            date += yy;
+            string year = Convert.ToString(yy);
+            year = year.Substring(2, 2);
+            date += year;
 
             day.Text = date;
         }

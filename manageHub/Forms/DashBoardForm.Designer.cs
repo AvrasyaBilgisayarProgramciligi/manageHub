@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,8 +61,8 @@
             this.mainText = new System.Windows.Forms.Label();
             this.MainTab = new MetroSet_UI.Controls.MetroSetTabControl();
             this.DashBoard = new MetroSet_UI.Child.MetroSetTabPage();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
@@ -152,6 +152,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.saveChart = new System.Windows.Forms.Button();
             this.productChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.pieChart1 = new LiveCharts.Wpf.PieChart();
             this.Contact = new MetroSet_UI.Child.MetroSetTabPage();
             this.sendMssg = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -167,12 +169,21 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.pieChart1 = new LiveCharts.Wpf.PieChart();
+            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.DashBoard.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).BeginInit();
             this.panel3.SuspendLayout();
@@ -190,6 +201,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productChart)).BeginInit();
             this.Contact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -539,7 +552,7 @@
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
             this.MainTab.Name = "MainTab";
-            this.MainTab.SelectedIndex = 3;
+            this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(1024, 584);
             this.MainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTab.Speed = 30;
@@ -556,7 +569,6 @@
             // DashBoard
             // 
             this.DashBoard.BaseColor = System.Drawing.Color.White;
-            this.DashBoard.Controls.Add(this.panel8);
             this.DashBoard.Controls.Add(this.panel7);
             this.DashBoard.Controls.Add(this.panel6);
             this.DashBoard.Controls.Add(this.panel3);
@@ -575,22 +587,25 @@
             this.DashBoard.ThemeName = null;
             this.DashBoard.ToolTipText = null;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.panel8.Location = new System.Drawing.Point(997, 187);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 344);
-            this.panel8.TabIndex = 7;
-            // 
             // panel7
             // 
             this.panel7.BackgroundImage = global::manageHub.Properties.Resources.dash5;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Controls.Add(this.panel16);
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Location = new System.Drawing.Point(347, 187);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(660, 344);
             this.panel7.TabIndex = 19;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.panel8.Location = new System.Drawing.Point(650, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 344);
+            this.panel8.TabIndex = 7;
             // 
             // panel6
             // 
@@ -660,11 +675,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(4, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 52);
+            this.label6.Size = new System.Drawing.Size(226, 60);
             this.label6.TabIndex = 12;
             this.label6.Text = "Do it today,\r\nor regret it tomorrow.\r\n";
             // 
@@ -673,7 +688,7 @@
             this.todoList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
             this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.todoList.CheckOnClick = true;
-            this.todoList.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoList.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todoList.ForeColor = System.Drawing.Color.DimGray;
             this.todoList.FormattingEnabled = true;
             this.todoList.IntegralHeight = false;
@@ -687,11 +702,11 @@
             // 
             this.panel3.BackgroundImage = global::manageHub.Properties.Resources.dash3;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.clock);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.day);
             this.panel3.Controls.Add(this.timer);
-            this.panel3.Controls.Add(this.clock);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Location = new System.Drawing.Point(683, 8);
             this.panel3.Name = "panel3";
@@ -703,11 +718,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(7, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 14);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Current Day: ";
             // 
@@ -716,11 +731,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(7, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Current Time: ";
             // 
@@ -728,23 +743,23 @@
             // 
             this.day.AutoSize = true;
             this.day.BackColor = System.Drawing.Color.Transparent;
-            this.day.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold);
+            this.day.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.day.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.day.Location = new System.Drawing.Point(3, 100);
             this.day.Name = "day";
-            this.day.Size = new System.Drawing.Size(173, 39);
+            this.day.Size = new System.Drawing.Size(146, 45);
             this.day.TabIndex = 16;
-            this.day.Text = "00/00/0000";
+            this.day.Text = "00/00/00";
             // 
             // timer
             // 
             this.timer.AutoSize = true;
             this.timer.BackColor = System.Drawing.Color.Transparent;
-            this.timer.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timer.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.timer.Location = new System.Drawing.Point(3, 38);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(131, 39);
+            this.timer.Size = new System.Drawing.Size(136, 45);
             this.timer.TabIndex = 15;
             this.timer.Text = "00:00:00";
             // 
@@ -753,7 +768,7 @@
             this.clock.BackColor = System.Drawing.Color.Transparent;
             this.clock.BackgroundImage = global::manageHub.Properties.Resources.baseline_access_time_white_48dp;
             this.clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clock.Location = new System.Drawing.Point(182, 25);
+            this.clock.Location = new System.Drawing.Point(175, 27);
             this.clock.Name = "clock";
             this.clock.Size = new System.Drawing.Size(119, 114);
             this.clock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -772,12 +787,12 @@
             // 
             this.panel2.BackgroundImage = global::manageHub.Properties.Resources.dash2;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.cityLabel);
             this.panel2.Controls.Add(this.changeCity);
             this.panel2.Controls.Add(this.labelHumi);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.labelHot);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.weatherSymbol);
@@ -792,12 +807,12 @@
             this.cityLabel.AutoSize = true;
             this.cityLabel.BackColor = System.Drawing.Color.Transparent;
             this.cityLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cityLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cityLabel.Location = new System.Drawing.Point(240, 9);
+            this.cityLabel.Location = new System.Drawing.Point(242, 5);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cityLabel.Size = new System.Drawing.Size(51, 14);
+            this.cityLabel.Size = new System.Drawing.Size(47, 13);
             this.cityLabel.TabIndex = 19;
             this.cityLabel.Text = "Trabzon";
             // 
@@ -809,7 +824,7 @@
             this.changeCity.Enabled = false;
             this.changeCity.FlatAppearance.BorderSize = 0;
             this.changeCity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeCity.Location = new System.Drawing.Point(288, 6);
+            this.changeCity.Location = new System.Drawing.Point(284, 3);
             this.changeCity.Name = "changeCity";
             this.changeCity.Size = new System.Drawing.Size(24, 17);
             this.changeCity.TabIndex = 18;
@@ -819,11 +834,11 @@
             // 
             this.labelHumi.AutoSize = true;
             this.labelHumi.BackColor = System.Drawing.Color.Transparent;
-            this.labelHumi.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold);
+            this.labelHumi.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHumi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelHumi.Location = new System.Drawing.Point(8, 100);
             this.labelHumi.Name = "labelHumi";
-            this.labelHumi.Size = new System.Drawing.Size(72, 39);
+            this.labelHumi.Size = new System.Drawing.Size(80, 45);
             this.labelHumi.TabIndex = 17;
             this.labelHumi.Text = "%00";
             // 
@@ -843,11 +858,11 @@
             // 
             this.labelHot.AutoSize = true;
             this.labelHot.BackColor = System.Drawing.Color.Transparent;
-            this.labelHot.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHot.Font = new System.Drawing.Font("Segoe UI", 36F);
             this.labelHot.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelHot.Location = new System.Drawing.Point(1, 22);
             this.labelHot.Name = "labelHot";
-            this.labelHot.Size = new System.Drawing.Size(73, 59);
+            this.labelHot.Size = new System.Drawing.Size(80, 65);
             this.labelHot.TabIndex = 14;
             this.labelHot.Text = "00";
             // 
@@ -855,11 +870,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(64, 30);
+            this.label5.Location = new System.Drawing.Point(65, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 49);
+            this.label5.Size = new System.Drawing.Size(48, 54);
             this.label5.TabIndex = 16;
             this.label5.Text = "C";
             // 
@@ -868,11 +883,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(6, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 14);
+            this.label7.Size = new System.Drawing.Size(101, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Current Humidity: ";
             // 
@@ -881,18 +896,18 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(6, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 14);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Current Heat: ";
             // 
             // weatherSymbol
             // 
             this.weatherSymbol.BackColor = System.Drawing.Color.Transparent;
-            this.weatherSymbol.Location = new System.Drawing.Point(182, 32);
+            this.weatherSymbol.Location = new System.Drawing.Point(170, 27);
             this.weatherSymbol.Name = "weatherSymbol";
             this.weatherSymbol.Size = new System.Drawing.Size(119, 114);
             this.weatherSymbol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -923,11 +938,11 @@
             // 
             this.welcomeBox.AutoSize = true;
             this.welcomeBox.BackColor = System.Drawing.Color.Transparent;
-            this.welcomeBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
             this.welcomeBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.welcomeBox.Location = new System.Drawing.Point(3, 15);
             this.welcomeBox.Name = "welcomeBox";
-            this.welcomeBox.Size = new System.Drawing.Size(199, 26);
+            this.welcomeBox.Size = new System.Drawing.Size(225, 30);
             this.welcomeBox.TabIndex = 9;
             this.welcomeBox.Text = "Good Morning, Orhan";
             // 
@@ -935,11 +950,11 @@
             // 
             this.ideaBox.AutoSize = true;
             this.ideaBox.BackColor = System.Drawing.Color.Transparent;
-            this.ideaBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ideaBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ideaBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ideaBox.Location = new System.Drawing.Point(3, 59);
             this.ideaBox.Name = "ideaBox";
-            this.ideaBox.Size = new System.Drawing.Size(50, 26);
+            this.ideaBox.Size = new System.Drawing.Size(53, 30);
             this.ideaBox.TabIndex = 8;
             this.ideaBox.Text = "İdea";
             // 
@@ -1620,6 +1635,7 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.solidGauge1);
             this.panel14.Controls.Add(this.label44);
             this.panel14.Location = new System.Drawing.Point(514, 34);
             this.panel14.Name = "panel14";
@@ -1636,7 +1652,6 @@
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(245, 197);
             this.label44.TabIndex = 0;
-            this.label44.Text = "00";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label47
@@ -1744,23 +1759,33 @@
             this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.productChart.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.productChart.Legends.Add(legend9);
             this.productChart.Location = new System.Drawing.Point(3, 275);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.productChart.Series.Add(series1);
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series9);
             this.productChart.Size = new System.Drawing.Size(499, 263);
             this.productChart.TabIndex = 14;
             this.productChart.TabStop = false;
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.BackColor = System.Drawing.Color.White;
+            this.elementHost1.Location = new System.Drawing.Point(514, 275);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(499, 263);
+            this.elementHost1.TabIndex = 76;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.pieChart1;
             // 
             // Contact
             // 
@@ -1956,15 +1981,117 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // elementHost1
+            // solidGauge1
             // 
-            this.elementHost1.BackColor = System.Drawing.Color.White;
-            this.elementHost1.Location = new System.Drawing.Point(514, 275);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(499, 263);
-            this.elementHost1.TabIndex = 76;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.pieChart1;
+            this.solidGauge1.Location = new System.Drawing.Point(23, 13);
+            this.solidGauge1.Name = "solidGauge1";
+            this.solidGauge1.Size = new System.Drawing.Size(199, 170);
+            this.solidGauge1.TabIndex = 109;
+            this.solidGauge1.Text = "solidGauge1";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.comboBox3);
+            this.panel16.Controls.Add(this.comboBox2);
+            this.panel16.Controls.Add(this.textBox10);
+            this.panel16.Controls.Add(this.textBox9);
+            this.panel16.Controls.Add(this.label53);
+            this.panel16.Controls.Add(this.label52);
+            this.panel16.Controls.Add(this.label51);
+            this.panel16.Location = new System.Drawing.Point(9, 10);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(446, 230);
+            this.panel16.TabIndex = 112;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(207, 178);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(170, 29);
+            this.comboBox3.TabIndex = 118;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(207, 139);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(170, 29);
+            this.comboBox2.TabIndex = 117;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox10.Location = new System.Drawing.Point(19, 179);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(170, 28);
+            this.textBox10.TabIndex = 116;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox9.Location = new System.Drawing.Point(19, 140);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(170, 28);
+            this.textBox9.TabIndex = 115;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label53.Location = new System.Drawing.Point(16, 108);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(103, 15);
+            this.label53.TabIndex = 114;
+            this.label53.Text = "May 29, 20:18 UTC";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label52.Location = new System.Drawing.Point(11, 51);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(268, 48);
+            this.label52.TabIndex = 113;
+            this.label52.Text = "6.01 Turkish lira";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.Transparent;
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label51.Location = new System.Drawing.Point(15, 26);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(209, 21);
+            this.label51.TabIndex = 112;
+            this.label51.Text = "1 United States Dollar equals";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(502, 29);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 105);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
             // 
             // DashBoardForm
             // 
@@ -1985,6 +2112,7 @@
             this.panel10.PerformLayout();
             this.MainTab.ResumeLayout(false);
             this.DashBoard.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).EndInit();
@@ -2009,6 +2137,9 @@
             this.Contact.ResumeLayout(false);
             this.Contact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2151,5 +2282,15 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.PieChart pieChart1;
+        private LiveCharts.WinForms.SolidGauge solidGauge1;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

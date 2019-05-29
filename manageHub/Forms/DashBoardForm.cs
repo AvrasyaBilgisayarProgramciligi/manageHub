@@ -120,6 +120,7 @@ namespace manageHub
             Console.WriteLine("Respon: "+ manager.getRespon());*/
 
             //-------------------------------------------------------------------------------------------
+            makeIdea();
         }
 
         /*if (staffBox.Items.Count == 0 || roleComboBox.Items.Count == 0)
@@ -187,28 +188,28 @@ namespace manageHub
                 string[] msg = welcomeBox.Text.Split(',');
                 msg[0] = "Good Night";
                 msg[1] = name.ToString().Trim();
-                welcomeBox.Text = msg[0] + ", " + msg[1];
+                welcomeBox.Text = msg[0] + ",\n" + msg[1];
             }
             else if (hours < 12)
             {
                 string[] msg = welcomeBox.Text.Split(',');
                 msg[0] = "Good Morning";
                 msg[1] = name.ToString().Trim();
-                welcomeBox.Text = msg[0] + ", " + msg[1];
+                welcomeBox.Text = msg[0] + ",\n" + msg[1];
             }
             else if (hours < 18)
             {
                 string[] msg = welcomeBox.Text.Split(',');
                 msg[0] = "Good Afternoon";
                 msg[1] = name.ToString().Trim();
-                welcomeBox.Text = msg[0] + ", " + msg[1];
+                welcomeBox.Text = msg[0] + ",\n" + msg[1];
             }
             else if (hours < 22)
             {
                 string[] msg = welcomeBox.Text.Split(',');
                 msg[0] = "Good Evening";
                 msg[1] = name.ToString().Trim();
-                welcomeBox.Text = msg[0] + ", " + msg[1];
+                welcomeBox.Text = msg[0] + ",\n" + msg[1];
             }
         }
 
@@ -255,14 +256,18 @@ namespace manageHub
             {
                 weatherSymbol.Location = new Point(182, 32);
                 weatherSymbol.Image = global::manageHub.Properties.Resources.baseline_cloud_white_48dp;
-                ideaBox.Text = "Weather looks cool,\nYou'd better dress up.";
             }
             else
             {
                 weatherSymbol.Image = global::manageHub.Properties.Resources.baseline_wb_sunny_white_48dp;
-                ideaBox.Font = new Font("Calibri", 12, FontStyle.Bold);
-                ideaBox.Text = "Weather seems hot,\nWhat are you waiting for to go outside?";
             }
+        }
+
+        private void makeIdea()
+        {
+            List<string> ideaList = new List<string>();
+            ideaList.Add("It's not bad idea to add something on to-do list.");
+            ideaBox.Text = ideaList[0];
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -974,6 +979,11 @@ namespace manageHub
                     conn.Close();
                 }
             }
+        }
+
+        private void Timer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

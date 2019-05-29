@@ -62,6 +62,14 @@
             this.MainTab = new MetroSet_UI.Controls.MetroSetTabControl();
             this.DashBoard = new MetroSet_UI.Child.MetroSetTabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.deleteItem = new System.Windows.Forms.Button();
@@ -71,24 +79,25 @@
             this.label6 = new System.Windows.Forms.Label();
             this.todoList = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.clock = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.day = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Label();
-            this.clock = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
             this.changeCity = new System.Windows.Forms.Button();
             this.labelHumi = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.labelHot = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.weatherSymbol = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dollarSymbol = new System.Windows.Forms.PictureBox();
             this.welcomeBox = new System.Windows.Forms.Label();
             this.ideaBox = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -142,6 +151,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
             this.label44 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -169,21 +179,14 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.DashBoard.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).BeginInit();
             this.panel3.SuspendLayout();
@@ -191,6 +194,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weatherSymbol)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dollarSymbol)).BeginInit();
             this.ShowPersonnels.SuspendLayout();
             this.ManagePersonnels.SuspendLayout();
             this.Chart.SuspendLayout();
@@ -201,8 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productChart)).BeginInit();
             this.Contact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -591,13 +593,106 @@
             // 
             this.panel7.BackgroundImage = global::manageHub.Properties.Resources.dash5;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Controls.Add(this.panel18);
+            this.panel7.Controls.Add(this.panel17);
             this.panel7.Controls.Add(this.panel16);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Location = new System.Drawing.Point(347, 187);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(660, 344);
             this.panel7.TabIndex = 19;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.comboBox3);
+            this.panel16.Controls.Add(this.comboBox2);
+            this.panel16.Controls.Add(this.textBox10);
+            this.panel16.Controls.Add(this.textBox9);
+            this.panel16.Controls.Add(this.label53);
+            this.panel16.Controls.Add(this.label52);
+            this.panel16.Controls.Add(this.label51);
+            this.panel16.Location = new System.Drawing.Point(9, 10);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(390, 230);
+            this.panel16.TabIndex = 112;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(207, 178);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(170, 29);
+            this.comboBox3.TabIndex = 118;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(207, 139);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(170, 29);
+            this.comboBox2.TabIndex = 117;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox10.Location = new System.Drawing.Point(19, 179);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(170, 28);
+            this.textBox10.TabIndex = 116;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox9.Location = new System.Drawing.Point(19, 140);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(170, 28);
+            this.textBox9.TabIndex = 115;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label53.Location = new System.Drawing.Point(16, 108);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(103, 15);
+            this.label53.TabIndex = 114;
+            this.label53.Text = "May 29, 20:18 UTC";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label52.Location = new System.Drawing.Point(11, 51);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(268, 48);
+            this.label52.TabIndex = 113;
+            this.label52.Text = "6.01 Turkish lira";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.Transparent;
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label51.Location = new System.Drawing.Point(15, 26);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(209, 21);
+            this.label51.TabIndex = 112;
+            this.label51.Text = "1 United States Dollar equals";
             // 
             // panel8
             // 
@@ -675,11 +770,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(4, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 60);
+            this.label6.Size = new System.Drawing.Size(212, 60);
             this.label6.TabIndex = 12;
             this.label6.Text = "Do it today,\r\nor regret it tomorrow.\r\n";
             // 
@@ -713,6 +808,18 @@
             this.panel3.Size = new System.Drawing.Size(324, 163);
             this.panel3.TabIndex = 15;
             // 
+            // clock
+            // 
+            this.clock.BackColor = System.Drawing.Color.Transparent;
+            this.clock.BackgroundImage = global::manageHub.Properties.Resources.baseline_access_time_white_48dp;
+            this.clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clock.Location = new System.Drawing.Point(175, 27);
+            this.clock.Name = "clock";
+            this.clock.Size = new System.Drawing.Size(119, 114);
+            this.clock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.clock.TabIndex = 14;
+            this.clock.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -733,7 +840,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(7, 25);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 17;
@@ -755,25 +862,13 @@
             // 
             this.timer.AutoSize = true;
             this.timer.BackColor = System.Drawing.Color.Transparent;
-            this.timer.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timer.Font = new System.Drawing.Font("Segoe UI", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.timer.Location = new System.Drawing.Point(3, 38);
+            this.timer.Location = new System.Drawing.Point(3, 22);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(136, 45);
+            this.timer.Size = new System.Drawing.Size(181, 59);
             this.timer.TabIndex = 15;
             this.timer.Text = "00:00:00";
-            // 
-            // clock
-            // 
-            this.clock.BackColor = System.Drawing.Color.Transparent;
-            this.clock.BackgroundImage = global::manageHub.Properties.Resources.baseline_access_time_white_48dp;
-            this.clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clock.Location = new System.Drawing.Point(175, 27);
-            this.clock.Name = "clock";
-            this.clock.Size = new System.Drawing.Size(119, 114);
-            this.clock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.clock.TabIndex = 14;
-            this.clock.TabStop = false;
             // 
             // panel9
             // 
@@ -801,6 +896,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(324, 163);
             this.panel2.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(58, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 15);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "o";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(65, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 54);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "C";
             // 
             // cityLabel
             // 
@@ -842,18 +961,6 @@
             this.labelHumi.TabIndex = 17;
             this.labelHumi.Text = "%00";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(58, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 15);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "o";
-            // 
             // labelHot
             // 
             this.labelHot.AutoSize = true;
@@ -865,18 +972,6 @@
             this.labelHot.Size = new System.Drawing.Size(80, 65);
             this.labelHot.TabIndex = 14;
             this.labelHot.Text = "00";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(65, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 54);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "C";
             // 
             // label7
             // 
@@ -926,6 +1021,7 @@
             // 
             this.panel1.BackgroundImage = global::manageHub.Properties.Resources.dash1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.dollarSymbol);
             this.panel1.Controls.Add(this.welcomeBox);
             this.panel1.Controls.Add(this.ideaBox);
             this.panel1.Controls.Add(this.panel5);
@@ -934,27 +1030,38 @@
             this.panel1.Size = new System.Drawing.Size(324, 163);
             this.panel1.TabIndex = 14;
             // 
+            // dollarSymbol
+            // 
+            this.dollarSymbol.BackColor = System.Drawing.Color.Transparent;
+            this.dollarSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dollarSymbol.BackgroundImage")));
+            this.dollarSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.dollarSymbol.Location = new System.Drawing.Point(177, 30);
+            this.dollarSymbol.Name = "dollarSymbol";
+            this.dollarSymbol.Size = new System.Drawing.Size(119, 111);
+            this.dollarSymbol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dollarSymbol.TabIndex = 19;
+            this.dollarSymbol.TabStop = false;
+            // 
             // welcomeBox
             // 
             this.welcomeBox.AutoSize = true;
             this.welcomeBox.BackColor = System.Drawing.Color.Transparent;
-            this.welcomeBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.welcomeBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.welcomeBox.Location = new System.Drawing.Point(3, 15);
+            this.welcomeBox.Location = new System.Drawing.Point(5, 3);
             this.welcomeBox.Name = "welcomeBox";
-            this.welcomeBox.Size = new System.Drawing.Size(225, 30);
+            this.welcomeBox.Size = new System.Drawing.Size(152, 56);
             this.welcomeBox.TabIndex = 9;
-            this.welcomeBox.Text = "Good Morning, Orhan";
+            this.welcomeBox.Text = "Good Morning, \r\nOrhan";
             // 
             // ideaBox
             // 
-            this.ideaBox.AutoSize = true;
             this.ideaBox.BackColor = System.Drawing.Color.Transparent;
-            this.ideaBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ideaBox.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ideaBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ideaBox.Location = new System.Drawing.Point(3, 59);
+            this.ideaBox.Location = new System.Drawing.Point(6, 68);
             this.ideaBox.Name = "ideaBox";
-            this.ideaBox.Size = new System.Drawing.Size(53, 30);
+            this.ideaBox.Size = new System.Drawing.Size(165, 86);
             this.ideaBox.TabIndex = 8;
             this.ideaBox.Text = "İdea";
             // 
@@ -1642,6 +1749,14 @@
             this.panel14.Size = new System.Drawing.Size(247, 199);
             this.panel14.TabIndex = 70;
             // 
+            // solidGauge1
+            // 
+            this.solidGauge1.Location = new System.Drawing.Point(23, 13);
+            this.solidGauge1.Name = "solidGauge1";
+            this.solidGauge1.Size = new System.Drawing.Size(199, 170);
+            this.solidGauge1.TabIndex = 109;
+            this.solidGauge1.Text = "solidGauge1";
+            // 
             // label44
             // 
             this.label44.BackColor = System.Drawing.Color.IndianRed;
@@ -1981,117 +2096,23 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
-            // solidGauge1
+            // panel17
             // 
-            this.solidGauge1.Location = new System.Drawing.Point(23, 13);
-            this.solidGauge1.Name = "solidGauge1";
-            this.solidGauge1.Size = new System.Drawing.Size(199, 170);
-            this.solidGauge1.TabIndex = 109;
-            this.solidGauge1.Text = "solidGauge1";
+            this.panel17.BackColor = System.Drawing.Color.Transparent;
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Location = new System.Drawing.Point(405, 10);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(240, 230);
+            this.panel17.TabIndex = 119;
             // 
-            // panel16
+            // panel18
             // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Controls.Add(this.comboBox3);
-            this.panel16.Controls.Add(this.comboBox2);
-            this.panel16.Controls.Add(this.textBox10);
-            this.panel16.Controls.Add(this.textBox9);
-            this.panel16.Controls.Add(this.label53);
-            this.panel16.Controls.Add(this.label52);
-            this.panel16.Controls.Add(this.label51);
-            this.panel16.Location = new System.Drawing.Point(9, 10);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(446, 230);
-            this.panel16.TabIndex = 112;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(207, 178);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(170, 29);
-            this.comboBox3.TabIndex = 118;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(207, 139);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(170, 29);
-            this.comboBox2.TabIndex = 117;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox10.Location = new System.Drawing.Point(19, 179);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(170, 28);
-            this.textBox10.TabIndex = 116;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox9.Location = new System.Drawing.Point(19, 140);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(170, 28);
-            this.textBox9.TabIndex = 115;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.Color.Transparent;
-            this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label53.Location = new System.Drawing.Point(16, 108);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(103, 15);
-            this.label53.TabIndex = 114;
-            this.label53.Text = "May 29, 20:18 UTC";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.BackColor = System.Drawing.Color.Transparent;
-            this.label52.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label52.Location = new System.Drawing.Point(11, 51);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(268, 48);
-            this.label52.TabIndex = 113;
-            this.label52.Text = "6.01 Turkish lira";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.Color.Transparent;
-            this.label51.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label51.Location = new System.Drawing.Point(15, 26);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(209, 21);
-            this.label51.TabIndex = 112;
-            this.label51.Text = "1 United States Dollar equals";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(502, 29);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 105);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
+            this.panel18.BackColor = System.Drawing.Color.Transparent;
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel18.Location = new System.Drawing.Point(9, 246);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(636, 90);
+            this.panel18.TabIndex = 120;
             // 
             // DashBoardForm
             // 
@@ -2113,6 +2134,8 @@
             this.MainTab.ResumeLayout(false);
             this.DashBoard.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).EndInit();
@@ -2124,6 +2147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.weatherSymbol)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dollarSymbol)).EndInit();
             this.ShowPersonnels.ResumeLayout(false);
             this.ShowPersonnels.PerformLayout();
             this.ManagePersonnels.ResumeLayout(false);
@@ -2137,9 +2161,6 @@
             this.Contact.ResumeLayout(false);
             this.Contact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2291,6 +2312,8 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox dollarSymbol;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel18;
     }
 }

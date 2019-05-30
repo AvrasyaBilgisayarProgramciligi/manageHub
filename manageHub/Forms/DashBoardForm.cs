@@ -80,6 +80,7 @@ namespace manageHub
             AddRoleComboBox2();
             CallRoles();
             chart2();
+            addItemOnToDoList();
             //-------------------------------------------------------------------------------------------
 
             //------------------------------------Data selections----------------------------------------
@@ -355,14 +356,32 @@ namespace manageHub
         {
             foreach (string item in todoList.CheckedItems.OfType<string>().ToList())
             {
-                todoList.Items.Remove(item);
-                deleteItem.Visible = false;
+                try
+                {
+                    conn.Open();
+                    OleDbCommand cmd = new OleDbCommand("DELETE FROM todolist WHERE [itemName] = @itemName", conn);
+                    cmd.Parameters.AddWithValue("@itemName", item);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                    deleteItem.Visible = false;
+                    todoList.Items.Clear();
+                    addItemOnToDoList();
+                }
             }
 
         }
 
         private void TodoList_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            todoList.SetSelected(todoList.SelectedIndex, false);
+
             if (!(todoList.GetItemChecked(e.Index)))
             {
                 deleteItem.Visible = true;
@@ -370,6 +389,37 @@ namespace manageHub
             else
             {
                 deleteItem.Visible = false;
+            }
+        }
+
+        private void addItemOnToDoList()
+        {
+            string item = null;
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT [itemName] FROM todolist", conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    item = reader["itemName"].ToString();
+                    if (todoList.Items.Contains(item))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        todoList.Items.Add(reader["itemName"].ToString());
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -432,8 +482,8 @@ namespace manageHub
             pie.DataLabels = true;
             pie.LabelPoint = labelPoint;
             pieChart1.Series.Add(pie);
-            
-            
+
+
             PieSeries pie1 = new PieSeries();
             pie1.Title = "Staff";
             pie1.Values = new ChartValues<double> { Convert.ToDouble(2) };
@@ -448,7 +498,7 @@ namespace manageHub
             pie2.DataLabels = true;
             pie2.LabelPoint = labelPoint;
             pieChart1.Series.Add(pie2);*/
-            
+
         }
 
         /*private void PersonnelRoleChart_Customize(object sender, EventArgs e)
@@ -523,7 +573,7 @@ namespace manageHub
             }
         }*/
 
-            private void SaveChart_Click(object sender, EventArgs e)
+        private void SaveChart_Click(object sender, EventArgs e)
         {
             String s = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + "\\Chart.png";
             productChart.SaveImage(s, ChartImageFormat.Png);
@@ -979,11 +1029,6 @@ namespace manageHub
                     conn.Close();
                 }
             }
-        }
-
-        private void Timer_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

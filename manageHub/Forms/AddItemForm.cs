@@ -56,7 +56,6 @@ namespace manageHub
                 {
                     //TODO: Add option need a word limit
                     MessageBox.Show("You work too hard, we put a restriction on here for thinking about you.", "Calm Down!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -64,9 +63,31 @@ namespace manageHub
                     if (dash.addWasClicked == true)
                     {
                         string item = itemName.Text.Trim().ToString();
-                        dash.todoList.Items.Add(item);
-                        dash.addWasClicked = false;
-                        this.Close();
+                        if (dash.todoList.Items.Contains(item))
+                        {
+                            MessageBox.Show("This item already exists in the to-do list.", "Manage Hub", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            return;
+                        }
+
+                        try
+                        {
+                            conn.Open();
+                            OleDbCommand cmd = new OleDbCommand("INSERT INTO todolist ([itemName]) VALUES (@itemName)", conn);
+                            cmd.Parameters.AddWithValue("@itemName", item);
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Item successfully added", "İnfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception exc)
+                        {
+                            Console.WriteLine(exc.ToString());
+                        }
+                        finally
+                        {
+                            conn.Close();
+                            dash.addWasClicked = false;
+                            this.Close();
+                        }
                     }
                     else if (dash.add2WasClicked == true)
                     {
@@ -86,11 +107,10 @@ namespace manageHub
                         finally
                         {
                             conn.Close();
+                            dash.roleBox.Items.Add(item);
+                            dash.add2WasClicked = false;
+                            this.Close();
                         }
-
-                        dash.roleBox.Items.Add(item);
-                        dash.add2WasClicked = false;
-                        this.Close();
                     }
                 }
             }
@@ -99,6 +119,42 @@ namespace manageHub
         private void BClosee_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddItemForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            addItemOnToDoList();
+        }
+
+        private void addItemOnToDoList()
+        {
+            string item = null;
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT [itemName] FROM todolist", conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    item = reader["itemName"].ToString();
+                    if (dash.todoList.Items.Contains(item))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        dash.todoList.Items.Add(reader["itemName"].ToString());
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

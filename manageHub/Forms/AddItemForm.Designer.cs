@@ -63,7 +63,8 @@
             this.bClosee.Location = new System.Drawing.Point(322, 0);
             this.bClosee.Name = "bClosee";
             this.bClosee.Size = new System.Drawing.Size(42, 28);
-            this.bClosee.TabIndex = 16;
+            this.bClosee.TabIndex = 0;
+            this.bClosee.TabStop = false;
             this.bClosee.UseVisualStyleBackColor = true;
             this.bClosee.Click += new System.EventHandler(this.BClosee_Click);
             // 
@@ -99,7 +100,7 @@
             this.itemName.Location = new System.Drawing.Point(57, 111);
             this.itemName.Name = "itemName";
             this.itemName.Size = new System.Drawing.Size(174, 32);
-            this.itemName.TabIndex = 19;
+            this.itemName.TabIndex = 1;
             // 
             // label1
             // 
@@ -130,7 +131,7 @@
             this.bAddItem.Location = new System.Drawing.Point(253, 111);
             this.bAddItem.Name = "bAddItem";
             this.bAddItem.Size = new System.Drawing.Size(88, 32);
-            this.bAddItem.TabIndex = 23;
+            this.bAddItem.TabIndex = 2;
             this.bAddItem.Text = "Add";
             this.bAddItem.UseVisualStyleBackColor = false;
             this.bAddItem.Click += new System.EventHandler(this.BAddItem_Click);
@@ -151,6 +152,7 @@
             this.Name = "AddItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Item";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddItemForm_FormClosed);
             this.Load += new System.EventHandler(this.AddItemForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,6 +62,8 @@
             this.MainTab = new MetroSet_UI.Controls.MetroSetTabControl();
             this.DashBoard = new MetroSet_UI.Child.MetroSetTabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -179,8 +181,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -549,7 +549,7 @@
             this.MainTab.Controls.Add(this.ManagePersonnels);
             this.MainTab.Controls.Add(this.Chart);
             this.MainTab.Controls.Add(this.Contact);
-            this.MainTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MainTab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
@@ -601,6 +601,24 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(660, 344);
             this.panel7.TabIndex = 19;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Transparent;
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel18.Location = new System.Drawing.Point(9, 246);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(636, 90);
+            this.panel18.TabIndex = 120;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Transparent;
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Location = new System.Drawing.Point(405, 10);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(240, 230);
+            this.panel17.TabIndex = 119;
             // 
             // panel16
             // 
@@ -781,9 +799,9 @@
             // todoList
             // 
             this.todoList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.todoList.CheckOnClick = true;
-            this.todoList.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoList.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todoList.ForeColor = System.Drawing.Color.DimGray;
             this.todoList.FormattingEnabled = true;
             this.todoList.IntegralHeight = false;
@@ -1033,7 +1051,7 @@
             // dollarSymbol
             // 
             this.dollarSymbol.BackColor = System.Drawing.Color.Transparent;
-            this.dollarSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dollarSymbol.BackgroundImage")));
+            this.dollarSymbol.BackgroundImage = global::manageHub.Properties.Resources.icons8_exchange_filled_100;
             this.dollarSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.dollarSymbol.Location = new System.Drawing.Point(177, 30);
             this.dollarSymbol.Name = "dollarSymbol";
@@ -1113,25 +1131,25 @@
             // label32
             // 
             this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.label32.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label32.Location = new System.Drawing.Point(11, 25);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(426, 28);
             this.label32.TabIndex = 65;
             this.label32.Text = "Personnel List";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // adressLabel
             // 
             this.adressLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.adressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.adressLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adressLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adressLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.adressLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.adressLabel.Location = new System.Drawing.Point(474, 260);
             this.adressLabel.Name = "adressLabel";
-            this.adressLabel.Size = new System.Drawing.Size(530, 250);
+            this.adressLabel.Size = new System.Drawing.Size(530, 254);
             this.adressLabel.TabIndex = 64;
             this.adressLabel.Text = "Adress:";
             // 
@@ -1140,38 +1158,36 @@
             this.eMailLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.eMailLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.eMailLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eMailLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eMailLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.eMailLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.eMailLabel.Location = new System.Drawing.Point(474, 212);
             this.eMailLabel.Name = "eMailLabel";
             this.eMailLabel.Size = new System.Drawing.Size(529, 28);
             this.eMailLabel.TabIndex = 63;
             this.eMailLabel.Text = "e-Mail:";
-            this.eMailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // phoneLabel
             // 
             this.phoneLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.phoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.phoneLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.phoneLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.phoneLabel.Location = new System.Drawing.Point(744, 164);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(260, 28);
             this.phoneLabel.TabIndex = 62;
             this.phoneLabel.Text = "Phone:";
-            this.phoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label8.Location = new System.Drawing.Point(233, 70);
+            this.label8.Location = new System.Drawing.Point(233, 68);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 15);
+            this.label8.Size = new System.Drawing.Size(82, 17);
             this.label8.TabIndex = 61;
             this.label8.Text = "Change Role";
             // 
@@ -1191,92 +1207,87 @@
             this.rolesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.rolesLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rolesLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rolesLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolesLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rolesLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rolesLabel.Location = new System.Drawing.Point(474, 164);
             this.rolesLabel.Name = "rolesLabel";
             this.rolesLabel.Size = new System.Drawing.Size(260, 28);
             this.rolesLabel.TabIndex = 60;
             this.rolesLabel.Text = "Roles:";
-            this.rolesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.lastNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.lastNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lastNameLabel.Location = new System.Drawing.Point(744, 68);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(260, 28);
             this.lastNameLabel.TabIndex = 59;
             this.lastNameLabel.Text = "Last Name:";
-            this.lastNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nameLabel
             // 
             this.nameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.nameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nameLabel.Location = new System.Drawing.Point(474, 68);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(260, 28);
             this.nameLabel.TabIndex = 58;
             this.nameLabel.Text = "Name:";
-            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // salaryLabel
             // 
             this.salaryLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.salaryLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.salaryLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.salaryLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.salaryLabel.Location = new System.Drawing.Point(744, 116);
             this.salaryLabel.Name = "salaryLabel";
             this.salaryLabel.Size = new System.Drawing.Size(260, 28);
             this.salaryLabel.TabIndex = 42;
             this.salaryLabel.Text = "Salary: ";
-            this.salaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // departLabel
             // 
             this.departLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.departLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.departLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.departLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.departLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.departLabel.Location = new System.Drawing.Point(474, 116);
             this.departLabel.Name = "departLabel";
             this.departLabel.Size = new System.Drawing.Size(260, 28);
             this.departLabel.TabIndex = 41;
             this.departLabel.Text = "Depart: ";
-            this.departLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PersonnelInfoLabel
             // 
             this.PersonnelInfoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.PersonnelInfoLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonnelInfoLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PersonnelInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.PersonnelInfoLabel.Location = new System.Drawing.Point(474, 25);
             this.PersonnelInfoLabel.Name = "PersonnelInfoLabel";
             this.PersonnelInfoLabel.Size = new System.Drawing.Size(530, 28);
             this.PersonnelInfoLabel.TabIndex = 49;
             this.PersonnelInfoLabel.Text = "Personnel Info";
-            this.PersonnelInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PersonnelInfoLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // staffBox
             // 
             this.staffBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.staffBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.staffBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.staffBox.FormattingEnabled = true;
-            this.staffBox.ItemHeight = 24;
+            this.staffBox.ItemHeight = 30;
             this.staffBox.Location = new System.Drawing.Point(11, 122);
             this.staffBox.Name = "staffBox";
-            this.staffBox.Size = new System.Drawing.Size(426, 386);
+            this.staffBox.Size = new System.Drawing.Size(426, 392);
             this.staffBox.TabIndex = 39;
             this.staffBox.TabStop = false;
             this.staffBox.SelectedIndexChanged += new System.EventHandler(this.StaffBox_SelectedIndexChanged);
@@ -1356,11 +1367,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 9F);
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label29.Location = new System.Drawing.Point(476, 188);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(40, 15);
+            this.label29.Size = new System.Drawing.Size(45, 17);
             this.label29.TabIndex = 101;
             this.label29.Text = "e-Mail";
             // 
@@ -1394,7 +1405,7 @@
             // 
             this.addPersonAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.addPersonAdress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addPersonAdress.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.addPersonAdress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPersonAdress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addPersonAdress.Location = new System.Drawing.Point(744, 270);
             this.addPersonAdress.Multiline = true;
@@ -1405,11 +1416,11 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Arial", 9F);
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label31.Location = new System.Drawing.Point(741, 248);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(46, 15);
+            this.label31.Size = new System.Drawing.Size(48, 17);
             this.label31.TabIndex = 97;
             this.label31.Text = "Adress";
             // 
@@ -1428,11 +1439,11 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 9F);
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label30.Location = new System.Drawing.Point(741, 188);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(43, 15);
+            this.label30.Size = new System.Drawing.Size(44, 17);
             this.label30.TabIndex = 95;
             this.label30.Text = "Phone";
             // 
@@ -1452,11 +1463,11 @@
             // 
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.SystemColors.Control;
-            this.label34.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label34.Location = new System.Drawing.Point(233, 70);
+            this.label34.Location = new System.Drawing.Point(233, 68);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(80, 15);
+            this.label34.Size = new System.Drawing.Size(82, 17);
             this.label34.TabIndex = 83;
             this.label34.Text = "Change Role";
             // 
@@ -1489,11 +1500,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 9F);
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label15.Location = new System.Drawing.Point(741, 129);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 15);
+            this.label15.Size = new System.Drawing.Size(43, 17);
             this.label15.TabIndex = 71;
             this.label15.Text = "Salary";
             // 
@@ -1539,22 +1550,23 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9F);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label13.Location = new System.Drawing.Point(476, 248);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 15);
+            this.label13.Size = new System.Drawing.Size(40, 17);
             this.label13.TabIndex = 70;
             this.label13.Text = "Roles";
             // 
             // roleBox
             // 
             this.roleBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.roleBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.roleBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.roleBox.CheckOnClick = true;
-            this.roleBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.roleBox.FormattingEnabled = true;
+            this.roleBox.IntegralHeight = false;
             this.roleBox.Location = new System.Drawing.Point(479, 270);
             this.roleBox.Name = "roleBox";
             this.roleBox.Size = new System.Drawing.Size(248, 210);
@@ -1563,11 +1575,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 9F);
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label14.Location = new System.Drawing.Point(741, 70);
+            this.label14.Location = new System.Drawing.Point(741, 68);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 15);
+            this.label14.Size = new System.Drawing.Size(70, 17);
             this.label14.TabIndex = 69;
             this.label14.Text = "Last Name";
             // 
@@ -1585,11 +1597,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9F);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.label11.Location = new System.Drawing.Point(476, 129);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 15);
+            this.label11.Size = new System.Drawing.Size(48, 17);
             this.label11.TabIndex = 68;
             this.label11.Text = "Depart";
             // 
@@ -1607,11 +1619,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 9F);
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.label12.Location = new System.Drawing.Point(475, 70);
+            this.label12.Location = new System.Drawing.Point(475, 68);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 15);
+            this.label12.Size = new System.Drawing.Size(43, 17);
             this.label12.TabIndex = 67;
             this.label12.Text = "Name";
             // 
@@ -1874,20 +1886,20 @@
             this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea9.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.productChart.Legends.Add(legend9);
+            chartArea5.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.productChart.Legends.Add(legend5);
             this.productChart.Location = new System.Drawing.Point(3, 275);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.productChart.Series.Add(series9);
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series";
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series5);
             this.productChart.Size = new System.Drawing.Size(499, 263);
             this.productChart.TabIndex = 14;
             this.productChart.TabStop = false;
@@ -2095,24 +2107,6 @@
             this.metroSetTabPage1.ThemeAuthor = "Narwin";
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Location = new System.Drawing.Point(405, 10);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(240, 230);
-            this.panel17.TabIndex = 119;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Location = new System.Drawing.Point(9, 246);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(636, 90);
-            this.panel18.TabIndex = 120;
             // 
             // DashBoardForm
             // 

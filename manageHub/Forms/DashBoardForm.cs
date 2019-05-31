@@ -1,5 +1,7 @@
 ﻿using LiveCharts;
 using LiveCharts.Wpf;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,8 +40,6 @@ namespace manageHub
         //-------------------------------------------------------------------------------------------
 
         //-----------------------------------Forms & Classes-----------------------------------------
-        private Classes.Manager manager;
-        private Classes.Programmer programmer;
         private LoginForm login;
         //ChangeCityForm changeCityForm = new ChangeCityForm();
         //-------------------------------------------------------------------------------------------
@@ -47,9 +48,10 @@ namespace manageHub
         OleDbConnection conn = new OleDbConnection("Provider =  Microsoft.ACE.OLEDB.12.0;Data Source = ../../Database/manageHubDb.accdb");
         //-------------------------------------------------------------------------------------------
 
-        //-----------------------------------------API-----------------------------------------------
+        //----------------------------------------API's----------------------------------------------
         private const string ApiKeyWeather = "fe9447ea77fff3fa6d1d4a713b6ea456";
-        private string connect = "https://api.openweathermap.org/data/2.5/forecast?q=Trabzon,tr&mode=xml&units=metric&appid=" + ApiKeyWeather;
+        private string connectWeatherKey = "https://api.openweathermap.org/data/2.5/forecast?q=Trabzon,tr&mode=xml&units=metric&appid=" + ApiKeyWeather;
+        private string connectExchangeKey = "https://blockchain.info/ticker";
         //-------------------------------------------------------------------------------------------
 
         public DashBoardForm(LoginForm login)
@@ -69,6 +71,7 @@ namespace manageHub
             t.Start();
             d_Tick();
 
+            exchangeAPI();
             weatherAPI();
             dateTime();
             //-------------------------------------------------------------------------------------------
@@ -84,22 +87,13 @@ namespace manageHub
             //-------------------------------------------------------------------------------------------
 
             //------------------------------------Data selections----------------------------------------
-            roleComboBox.SelectedIndex = 0;
-            roleComboBox2.SelectedIndex = 0;
-            staffBox.SelectedIndex = 0;
+            checkBoxes();
+            checkMoneyUnit();
+            //-------------------------------------------------------------------------------------------
+
+            //------------------------------------Other functions----------------------------------------
             MainTab.SelectedIndex = 0;
-            if (cultureInfo.Name.Equals("tr-TR"))
-            {
-                moneyUnit.SelectedIndex = 0;
-            }
-            else if (cultureInfo.Name.Equals("en-US"))
-            {
-                moneyUnit.SelectedIndex = 1;
-            }
-            else
-            {
-                moneyUnit.SelectedIndex = 2;
-            }
+            makeIdea();
             //-------------------------------------------------------------------------------------------
 
             //---------------------------------Testing Inheritance---------------------------------------
@@ -121,18 +115,45 @@ namespace manageHub
             Console.WriteLine("Respon: "+ manager.getRespon());*/
 
             //-------------------------------------------------------------------------------------------
-            makeIdea();
         }
 
-        /*if (staffBox.Items.Count == 0 || roleComboBox.Items.Count == 0)
+        private void checkBoxes()
         {
+            if (roleComboBox.Items.Count > 0)
+            {
+                roleComboBox.SelectedIndex = 0;
+                staffBox.SelectedIndex = 0;
+            }
+            else
+            {
+                return;
+            }
 
+            if (roleComboBox2.Items.Count > 0)
+            {
+                roleComboBox2.SelectedIndex = 0;
+            }
+            else
+            {
+                return;
+            }
         }
-        else
+
+        private void checkMoneyUnit()
         {
-            staffBox.SelectedIndex = 0;
-            roleComboBox.SelectedIndex = 0;
-        }*/
+            if (cultureInfo.Name.Equals("tr-TR"))
+            {
+                moneyUnit.SelectedIndex = 0;
+            }
+            else if (cultureInfo.Name.Equals("en-US"))
+            {
+                moneyUnit.SelectedIndex = 1;
+            }
+            else
+            {
+                moneyUnit.SelectedIndex = 2;
+            }
+        }
 
         private void MainPanel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -214,31 +235,87 @@ namespace manageHub
             }
         }
 
+        private void exchangeAPI()
+        {
+            try
+            {
+                WebClient client = new WebClient();
+                var data = client.DownloadString(connectExchangeKey);
+                JObject currencies = JObject.Parse(data);
+                double currency = Convert.ToDouble(currencies.SelectToken("USD.15m"));
+                bitcoinToDolar.Text = Convert.ToString(currency * 10);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+
+            try
+            {
+                WebClient client = new WebClient();
+                var data = client.DownloadString(connectExchangeKey);
+                JObject currencies = JObject.Parse(data);
+                double currency = Convert.ToDouble(currencies.SelectToken("EUR.15m"));
+                bitcoinToEuro.Text = Convert.ToString(currency * 10);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+
+            try
+            {
+                WebClient client = new WebClient();
+                var data = client.DownloadString(connectExchangeKey);
+                JObject currencies = JObject.Parse(data);
+                double currency = Convert.ToDouble(currencies.SelectToken("GBP.15m"));
+                bitcoinToPound.Text = Convert.ToString(currency * 10);
+                Console.WriteLine(Convert.ToString(currency * 10));
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+        }
+
+        private void RefreshExchange_Click(object sender, EventArgs e)
+        {
+            exchangeAPI();
+        }
+
         public void weatherAPI()
         {
             decimal celcius = 0;
             try
             {
-                XDocument weather = XDocument.Load(connect);
-                var hot = weather.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+                XDocument weather = XDocument.Load(connectWeatherKey);
+                var valueTemp = weather.Descendants("temperature").ElementAt(0).Attribute("value").Value;
                 if (cultureInfo.Name.Equals("tr-TR"))
                 {
-                    celcius = decimal.Parse(hot.Replace('.', ','));
+                    celcius = decimal.Parse(valueTemp.Replace('.', ','));
                 }
                 else
                 {
-                    celcius = decimal.Parse(hot);
+                    celcius = decimal.Parse(valueTemp);
                 }
 
-                var humi = weather.Descendants("humidity").ElementAt(0).Attribute("value").Value;
-                double humie = double.Parse(humi.ToString());
+                var valueHumi = weather.Descendants("humidity").ElementAt(0).Attribute("value").Value;
+                double humie = double.Parse(valueHumi.ToString());
                 labelHumi.Text = string.Concat("%" + (humie));
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                MessageBox.Show(e.ToString(), "Something went wrong", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                this.DialogResult = DialogResult.OK;
-                Application.Exit();
+                DialogResult result;
+                Console.WriteLine(exc.ToString());
+                result = MessageBox.Show("Something went wrong", "Manage Hub", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (result == DialogResult.Retry)
+                {
+                    weatherAPI(); // Need a test
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
 
             //int lastCelcius = Convert.ToDecimal(celcius);
@@ -797,12 +874,12 @@ namespace manageHub
 
         private void DeleteRole_MouseEnter(object sender, EventArgs e)
         {
-            this.deleteRole.Font = new Font("Arial", 9, FontStyle.Underline);
+            this.deleteRole.Font = new Font("Segoe UI", 9, FontStyle.Underline);
         }
 
         private void DeleteRole_MouseLeave(object sender, EventArgs e)
         {
-            this.deleteRole.Font = new Font("Arial", 9, FontStyle.Regular);
+            this.deleteRole.Font = new Font("Segoe UI", 9, FontStyle.Regular);
         }
 
         private void CallRoles()

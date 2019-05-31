@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,7 +63,19 @@
             this.DashBoard = new MetroSet_UI.Child.MetroSetTabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.bitcoinToPound = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.bitcoinToEuro = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.bitcoinToDolar = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -181,11 +193,18 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
+            this.label59 = new System.Windows.Forms.Label();
+            this.refreshExchange = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.DashBoard.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listPicture)).BeginInit();
@@ -549,7 +568,7 @@
             this.MainTab.Controls.Add(this.ManagePersonnels);
             this.MainTab.Controls.Add(this.Chart);
             this.MainTab.Controls.Add(this.Contact);
-            this.MainTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MainTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
@@ -606,19 +625,162 @@
             // 
             this.panel18.BackColor = System.Drawing.Color.Transparent;
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Location = new System.Drawing.Point(9, 246);
+            this.panel18.Controls.Add(this.panel21);
+            this.panel18.Controls.Add(this.panel20);
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Location = new System.Drawing.Point(9, 232);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(636, 90);
+            this.panel18.Size = new System.Drawing.Size(636, 104);
             this.panel18.TabIndex = 120;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.bitcoinToPound);
+            this.panel21.Controls.Add(this.label58);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel21.Location = new System.Drawing.Point(424, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(212, 102);
+            this.panel21.TabIndex = 2;
+            // 
+            // bitcoinToPound
+            // 
+            this.bitcoinToPound.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bitcoinToPound.Font = new System.Drawing.Font("Segoe UI", 21F);
+            this.bitcoinToPound.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.bitcoinToPound.Location = new System.Drawing.Point(72, 0);
+            this.bitcoinToPound.Name = "bitcoinToPound";
+            this.bitcoinToPound.Size = new System.Drawing.Size(140, 102);
+            this.bitcoinToPound.TabIndex = 1;
+            this.bitcoinToPound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label58
+            // 
+            this.label58.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label58.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label58.Location = new System.Drawing.Point(0, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(72, 102);
+            this.label58.TabIndex = 0;
+            this.label58.Text = "£";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.bitcoinToEuro);
+            this.panel20.Controls.Add(this.label57);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel20.Location = new System.Drawing.Point(212, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(212, 102);
+            this.panel20.TabIndex = 1;
+            // 
+            // bitcoinToEuro
+            // 
+            this.bitcoinToEuro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bitcoinToEuro.Font = new System.Drawing.Font("Segoe UI", 21F);
+            this.bitcoinToEuro.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.bitcoinToEuro.Location = new System.Drawing.Point(76, 0);
+            this.bitcoinToEuro.Name = "bitcoinToEuro";
+            this.bitcoinToEuro.Size = new System.Drawing.Size(136, 102);
+            this.bitcoinToEuro.TabIndex = 1;
+            this.bitcoinToEuro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label57
+            // 
+            this.label57.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label57.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label57.Location = new System.Drawing.Point(0, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(76, 102);
+            this.label57.TabIndex = 0;
+            this.label57.Text = "€";
+            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.bitcoinToDolar);
+            this.panel19.Controls.Add(this.label56);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(212, 102);
+            this.panel19.TabIndex = 0;
+            // 
+            // bitcoinToDolar
+            // 
+            this.bitcoinToDolar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bitcoinToDolar.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bitcoinToDolar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.bitcoinToDolar.Location = new System.Drawing.Point(76, 0);
+            this.bitcoinToDolar.Name = "bitcoinToDolar";
+            this.bitcoinToDolar.Size = new System.Drawing.Size(136, 102);
+            this.bitcoinToDolar.TabIndex = 1;
+            this.bitcoinToDolar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label56
+            // 
+            this.label56.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label56.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label56.Location = new System.Drawing.Point(0, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(76, 102);
+            this.label56.TabIndex = 0;
+            this.label56.Text = "$";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.Transparent;
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.refreshExchange);
+            this.panel17.Controls.Add(this.label59);
+            this.panel17.Controls.Add(this.label55);
+            this.panel17.Controls.Add(this.label54);
+            this.panel17.Controls.Add(this.label50);
             this.panel17.Location = new System.Drawing.Point(405, 10);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(240, 230);
+            this.panel17.Size = new System.Drawing.Size(240, 216);
             this.panel17.TabIndex = 119;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.Color.Transparent;
+            this.label55.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label55.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label55.Location = new System.Drawing.Point(11, 38);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(129, 48);
+            this.label55.TabIndex = 119;
+            this.label55.Text = "Bitcoin";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Transparent;
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label54.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label54.Location = new System.Drawing.Point(16, 13);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(51, 21);
+            this.label54.TabIndex = 119;
+            this.label54.Text = "Based";
+            // 
+            // label50
+            // 
+            this.label50.BackColor = System.Drawing.Color.Transparent;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 69.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label50.Location = new System.Drawing.Point(-1, 61);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(240, 154);
+            this.label50.TabIndex = 9;
+            this.label50.Text = "Ƀ 10";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel16
             // 
@@ -633,7 +795,7 @@
             this.panel16.Controls.Add(this.label51);
             this.panel16.Location = new System.Drawing.Point(9, 10);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(390, 230);
+            this.panel16.Size = new System.Drawing.Size(390, 216);
             this.panel16.TabIndex = 112;
             // 
             // comboBox3
@@ -641,7 +803,7 @@
             this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(207, 178);
+            this.comboBox3.Location = new System.Drawing.Point(207, 165);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(170, 29);
             this.comboBox3.TabIndex = 118;
@@ -651,7 +813,7 @@
             this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(207, 139);
+            this.comboBox2.Location = new System.Drawing.Point(207, 126);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(170, 29);
             this.comboBox2.TabIndex = 117;
@@ -661,7 +823,7 @@
             this.textBox10.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox10.Location = new System.Drawing.Point(19, 179);
+            this.textBox10.Location = new System.Drawing.Point(19, 166);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(170, 28);
             this.textBox10.TabIndex = 116;
@@ -671,7 +833,7 @@
             this.textBox9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox9.Location = new System.Drawing.Point(19, 140);
+            this.textBox9.Location = new System.Drawing.Point(19, 127);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(170, 28);
             this.textBox9.TabIndex = 115;
@@ -682,7 +844,7 @@
             this.label53.BackColor = System.Drawing.Color.Transparent;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label53.Location = new System.Drawing.Point(16, 108);
+            this.label53.Location = new System.Drawing.Point(16, 95);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(103, 15);
             this.label53.TabIndex = 114;
@@ -694,7 +856,7 @@
             this.label52.BackColor = System.Drawing.Color.Transparent;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label52.Location = new System.Drawing.Point(11, 51);
+            this.label52.Location = new System.Drawing.Point(11, 38);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(268, 48);
             this.label52.TabIndex = 113;
@@ -706,7 +868,7 @@
             this.label51.BackColor = System.Drawing.Color.Transparent;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label51.Location = new System.Drawing.Point(15, 26);
+            this.label51.Location = new System.Drawing.Point(15, 13);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(209, 21);
             this.label51.TabIndex = 112;
@@ -799,10 +961,10 @@
             // todoList
             // 
             this.todoList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(179)))));
-            this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.todoList.CheckOnClick = true;
             this.todoList.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todoList.ForeColor = System.Drawing.Color.DimGray;
+            this.todoList.ForeColor = System.Drawing.Color.Black;
             this.todoList.FormattingEnabled = true;
             this.todoList.IntegralHeight = false;
             this.todoList.Location = new System.Drawing.Point(0, 81);
@@ -882,7 +1044,7 @@
             this.timer.BackColor = System.Drawing.Color.Transparent;
             this.timer.Font = new System.Drawing.Font("Segoe UI", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.timer.Location = new System.Drawing.Point(3, 22);
+            this.timer.Location = new System.Drawing.Point(0, 22);
             this.timer.Name = "timer";
             this.timer.Size = new System.Drawing.Size(181, 59);
             this.timer.TabIndex = 15;
@@ -1487,10 +1649,10 @@
             // 
             this.staffBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.staffBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.staffBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.staffBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.staffBox2.FormattingEnabled = true;
-            this.staffBox2.ItemHeight = 24;
+            this.staffBox2.ItemHeight = 30;
             this.staffBox2.Location = new System.Drawing.Point(11, 122);
             this.staffBox2.Name = "staffBox2";
             this.staffBox2.Size = new System.Drawing.Size(426, 362);
@@ -1522,11 +1684,11 @@
             // deleteRole
             // 
             this.deleteRole.AutoSize = true;
-            this.deleteRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
-            this.deleteRole.Location = new System.Drawing.Point(568, 486);
+            this.deleteRole.Location = new System.Drawing.Point(565, 486);
             this.deleteRole.Name = "deleteRole";
-            this.deleteRole.Size = new System.Drawing.Size(72, 15);
+            this.deleteRole.Size = new System.Drawing.Size(66, 15);
             this.deleteRole.TabIndex = 58;
             this.deleteRole.Text = "Delete Role";
             this.deleteRole.Click += new System.EventHandler(this.DeleteRole_Click);
@@ -1536,11 +1698,11 @@
             // addNewRole
             // 
             this.addNewRole.AutoSize = true;
-            this.addNewRole.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(90)))), ((int)(((byte)(102)))));
             this.addNewRole.Location = new System.Drawing.Point(477, 486);
             this.addNewRole.Name = "addNewRole";
-            this.addNewRole.Size = new System.Drawing.Size(85, 15);
+            this.addNewRole.Size = new System.Drawing.Size(82, 15);
             this.addNewRole.TabIndex = 59;
             this.addNewRole.Text = "Add New Role";
             this.addNewRole.Click += new System.EventHandler(this.AddNewRole_Click);
@@ -1886,20 +2048,20 @@
             this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.productChart.Legends.Add(legend5);
+            chartArea3.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.productChart.Legends.Add(legend3);
             this.productChart.Location = new System.Drawing.Point(3, 275);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.productChart.Series.Add(series5);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series3);
             this.productChart.Size = new System.Drawing.Size(499, 263);
             this.productChart.TabIndex = 14;
             this.productChart.TabStop = false;
@@ -2108,6 +2270,34 @@
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
             // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.Color.Transparent;
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label59.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label59.Location = new System.Drawing.Point(196, -1);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(44, 21);
+            this.label59.TabIndex = 120;
+            this.label59.Text = "BETA";
+            // 
+            // refreshExchange
+            // 
+            this.refreshExchange.BackColor = System.Drawing.Color.Transparent;
+            this.refreshExchange.BackgroundImage = global::manageHub.Properties.Resources.baseline_refresh_white_24dp;
+            this.refreshExchange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshExchange.FlatAppearance.BorderSize = 0;
+            this.refreshExchange.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshExchange.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshExchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshExchange.Location = new System.Drawing.Point(202, 198);
+            this.refreshExchange.Name = "refreshExchange";
+            this.refreshExchange.Size = new System.Drawing.Size(37, 16);
+            this.refreshExchange.TabIndex = 123;
+            this.refreshExchange.UseVisualStyleBackColor = false;
+            this.refreshExchange.Click += new System.EventHandler(this.RefreshExchange_Click);
+            // 
             // DashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2128,6 +2318,12 @@
             this.MainTab.ResumeLayout(false);
             this.DashBoard.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -2309,5 +2505,19 @@
         private System.Windows.Forms.PictureBox dollarSymbol;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label bitcoinToDolar;
+        private System.Windows.Forms.Label bitcoinToPound;
+        private System.Windows.Forms.Label bitcoinToEuro;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Button refreshExchange;
     }
 }

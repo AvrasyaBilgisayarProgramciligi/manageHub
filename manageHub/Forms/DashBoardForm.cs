@@ -37,6 +37,9 @@ namespace manageHub
         private string pLastName = "";
         public bool addWasClicked = false;
         public bool add2WasClicked = false;
+
+        private List<TextBox> myTextBoxes = new List<TextBox>();
+        private List<Panel> myPanels = new List<Panel>();
         //-------------------------------------------------------------------------------------------
 
         //-----------------------------------Forms & Classes-----------------------------------------
@@ -82,7 +85,7 @@ namespace manageHub
             AddRoleComboBox();
             AddRoleComboBox2();
             CallRoles();
-            chart2();
+            pieChart();
             addItemOnToDoList();
             //-------------------------------------------------------------------------------------------
 
@@ -94,6 +97,24 @@ namespace manageHub
             //------------------------------------Other functions----------------------------------------
             MainTab.SelectedIndex = 0;
             makeIdea();
+            //-------------------------------------------------------------------------------------------
+
+            //------------------------------------List functions-----------------------------------------
+
+            myTextBoxes.Add(addPersonName);
+            myTextBoxes.Add(addPersonLastName);
+            myTextBoxes.Add(addPersonDepart);
+            myTextBoxes.Add(addPersonSalary);
+            myTextBoxes.Add(addPersonMail);
+            myTextBoxes.Add(addPersonAdress);
+
+            myPanels.Add(alert1);
+            myPanels.Add(alert2);
+            myPanels.Add(alert3);
+            myPanels.Add(alert4);
+            myPanels.Add(alert5);
+            myPanels.Add(alert6);
+
             //-------------------------------------------------------------------------------------------
 
             //---------------------------------Testing Inheritance---------------------------------------
@@ -171,7 +192,7 @@ namespace manageHub
             }
             else if (result == DialogResult.No)
             {
-
+                return;
             }
         }
 
@@ -541,17 +562,15 @@ namespace manageHub
                 conn.Close();
             }
 
-            //---------------------------------------Chart 2---------------------------------------------
-
-
             //personnelRoleChart
         }
 
-        private void chart2()
+        //---------------------------------------Chart 2---------------------------------------------
+
+        private void pieChart()
         {
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0:n0} ({1:P})", chartPoint.Y, chartPoint.Participation);
             pieChart1.Series = new LiveCharts.SeriesCollection();
-
 
             PieSeries pie = new PieSeries();
             pie.Title = "Programmer";
@@ -914,9 +933,28 @@ namespace manageHub
                 return;
             }
 
-            if (addPersonName.Text.ToString().Trim().Equals("") || addPersonLastName.Text.ToString().Trim().Equals("") || addPersonDepart.Text.ToString().Trim().Equals("") ||
-                addPersonSalary.Text.ToString().Trim().Equals("") || roleBox.CheckedItems.Count < 1)
+            if (myTextBoxes[0].Text.ToString().Trim().Equals("") || myTextBoxes[1].Text.ToString().Trim().Equals("") || myTextBoxes[2].Text.ToString().Trim().Equals("") ||
+                myTextBoxes[3].Text.ToString().Trim().Equals("") || myTextBoxes[4].Text.ToString().Trim().Equals("") || myTextBoxes[5].Text.ToString().Trim().Equals("")
+                || roleBox.CheckedItems.Count < 1 || addPersonPhone.Text.ToString().Trim().Equals(""))
             {
+                for(int i = 0; i < myTextBoxes.Count; i++)
+                {
+                    if (myTextBoxes[i].Text.ToString().Trim().Equals(""))
+                    {
+                        myPanels[i].Visible = true;
+                    }
+                }
+
+                if (addPersonPhone.MaskCompleted == false)
+                {
+                    alertPhone.Visible = true;
+                }
+
+                if(roleBox.CheckedItems.Count < 1)
+                {
+                    alertRoles.Visible = true;
+                }
+
                 MessageBox.Show("Boxes cannot be left blank", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -960,6 +998,46 @@ namespace manageHub
             {
                 return;
             }
+        }
+
+        private void AddPersonName_Enter(object sender, EventArgs e)
+        {
+            alert1.Visible = false;
+        }
+
+        private void AddPersonLastName_Enter(object sender, EventArgs e)
+        {
+            alert2.Visible = false;
+        }
+
+        private void AddPersonDepart_Enter(object sender, EventArgs e)
+        {
+            alert3.Visible = false;
+        }
+
+        private void AddPersonSalary_Enter(object sender, EventArgs e)
+        {
+            alert4.Visible = false;
+        }
+
+        private void AddPersonMail_Enter(object sender, EventArgs e)
+        {
+            alert5.Visible = false;
+        }
+
+        private void AddPersonPhone_Enter(object sender, EventArgs e)
+        {
+            alertPhone.Visible = false;
+        }
+
+        private void AddPersonAdress_Enter(object sender, EventArgs e)
+        {
+            alert6.Visible = false;
+        }
+
+        private void RoleBox_Enter(object sender, EventArgs e)
+        {
+            alertRoles.Visible = false;
         }
 
         private void clearBoxes()

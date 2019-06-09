@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -73,6 +73,8 @@
             this.bitcoinToDolar = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.refreshExchange = new System.Windows.Forms.Button();
+            this.label59 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
@@ -131,6 +133,14 @@
             this.PersonnelInfoLabel = new System.Windows.Forms.Label();
             this.staffBox = new System.Windows.Forms.ListBox();
             this.ManagePersonnels = new MetroSet_UI.Child.MetroSetTabPage();
+            this.alertRoles = new System.Windows.Forms.Panel();
+            this.alert6 = new System.Windows.Forms.Panel();
+            this.alertPhone = new System.Windows.Forms.Panel();
+            this.alert4 = new System.Windows.Forms.Panel();
+            this.alert3 = new System.Windows.Forms.Panel();
+            this.alert2 = new System.Windows.Forms.Panel();
+            this.alert5 = new System.Windows.Forms.Panel();
+            this.alert1 = new System.Windows.Forms.Panel();
             this.RemovePerson = new System.Windows.Forms.Button();
             this.AddPerson = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
@@ -193,8 +203,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
-            this.label59 = new System.Windows.Forms.Label();
-            this.refreshExchange = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -573,7 +581,7 @@
             this.MainTab.ItemSize = new System.Drawing.Size(100, 38);
             this.MainTab.Location = new System.Drawing.Point(0, 28);
             this.MainTab.Name = "MainTab";
-            this.MainTab.SelectedIndex = 0;
+            this.MainTab.SelectedIndex = 2;
             this.MainTab.Size = new System.Drawing.Size(1024, 584);
             this.MainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTab.Speed = 30;
@@ -745,6 +753,34 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(240, 216);
             this.panel17.TabIndex = 119;
+            // 
+            // refreshExchange
+            // 
+            this.refreshExchange.BackColor = System.Drawing.Color.Transparent;
+            this.refreshExchange.BackgroundImage = global::manageHub.Properties.Resources.baseline_refresh_white_24dp;
+            this.refreshExchange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshExchange.FlatAppearance.BorderSize = 0;
+            this.refreshExchange.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshExchange.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshExchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshExchange.Location = new System.Drawing.Point(202, 198);
+            this.refreshExchange.Name = "refreshExchange";
+            this.refreshExchange.Size = new System.Drawing.Size(37, 16);
+            this.refreshExchange.TabIndex = 123;
+            this.refreshExchange.UseVisualStyleBackColor = false;
+            this.refreshExchange.Click += new System.EventHandler(this.RefreshExchange_Click);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.Color.Transparent;
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label59.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label59.Location = new System.Drawing.Point(196, -1);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(44, 21);
+            this.label59.TabIndex = 120;
+            this.label59.Text = "BETA";
             // 
             // label55
             // 
@@ -1457,6 +1493,14 @@
             // ManagePersonnels
             // 
             this.ManagePersonnels.BaseColor = System.Drawing.Color.White;
+            this.ManagePersonnels.Controls.Add(this.alertRoles);
+            this.ManagePersonnels.Controls.Add(this.alert6);
+            this.ManagePersonnels.Controls.Add(this.alertPhone);
+            this.ManagePersonnels.Controls.Add(this.alert4);
+            this.ManagePersonnels.Controls.Add(this.alert3);
+            this.ManagePersonnels.Controls.Add(this.alert2);
+            this.ManagePersonnels.Controls.Add(this.alert5);
+            this.ManagePersonnels.Controls.Add(this.alert1);
             this.ManagePersonnels.Controls.Add(this.RemovePerson);
             this.ManagePersonnels.Controls.Add(this.AddPerson);
             this.ManagePersonnels.Controls.Add(this.label29);
@@ -1495,6 +1539,78 @@
             this.ManagePersonnels.ThemeAuthor = null;
             this.ManagePersonnels.ThemeName = null;
             this.ManagePersonnels.ToolTipText = null;
+            // 
+            // alertRoles
+            // 
+            this.alertRoles.BackColor = System.Drawing.Color.Red;
+            this.alertRoles.Location = new System.Drawing.Point(479, 478);
+            this.alertRoles.Name = "alertRoles";
+            this.alertRoles.Size = new System.Drawing.Size(248, 2);
+            this.alertRoles.TabIndex = 105;
+            this.alertRoles.Visible = false;
+            // 
+            // alert6
+            // 
+            this.alert6.BackColor = System.Drawing.Color.Red;
+            this.alert6.Location = new System.Drawing.Point(744, 478);
+            this.alert6.Name = "alert6";
+            this.alert6.Size = new System.Drawing.Size(260, 2);
+            this.alert6.TabIndex = 107;
+            this.alert6.Visible = false;
+            // 
+            // alertPhone
+            // 
+            this.alertPhone.BackColor = System.Drawing.Color.Red;
+            this.alertPhone.Location = new System.Drawing.Point(744, 239);
+            this.alertPhone.Name = "alertPhone";
+            this.alertPhone.Size = new System.Drawing.Size(260, 2);
+            this.alertPhone.TabIndex = 106;
+            this.alertPhone.Visible = false;
+            // 
+            // alert4
+            // 
+            this.alert4.BackColor = System.Drawing.Color.Red;
+            this.alert4.Location = new System.Drawing.Point(787, 180);
+            this.alert4.Name = "alert4";
+            this.alert4.Size = new System.Drawing.Size(217, 2);
+            this.alert4.TabIndex = 106;
+            this.alert4.Visible = false;
+            // 
+            // alert3
+            // 
+            this.alert3.BackColor = System.Drawing.Color.Red;
+            this.alert3.Location = new System.Drawing.Point(478, 180);
+            this.alert3.Name = "alert3";
+            this.alert3.Size = new System.Drawing.Size(248, 2);
+            this.alert3.TabIndex = 105;
+            this.alert3.Visible = false;
+            // 
+            // alert2
+            // 
+            this.alert2.BackColor = System.Drawing.Color.Red;
+            this.alert2.Location = new System.Drawing.Point(744, 121);
+            this.alert2.Name = "alert2";
+            this.alert2.Size = new System.Drawing.Size(260, 2);
+            this.alert2.TabIndex = 105;
+            this.alert2.Visible = false;
+            // 
+            // alert5
+            // 
+            this.alert5.BackColor = System.Drawing.Color.Red;
+            this.alert5.Location = new System.Drawing.Point(478, 239);
+            this.alert5.Name = "alert5";
+            this.alert5.Size = new System.Drawing.Size(248, 2);
+            this.alert5.TabIndex = 104;
+            this.alert5.Visible = false;
+            // 
+            // alert1
+            // 
+            this.alert1.BackColor = System.Drawing.Color.Red;
+            this.alert1.Location = new System.Drawing.Point(478, 121);
+            this.alert1.Name = "alert1";
+            this.alert1.Size = new System.Drawing.Size(248, 2);
+            this.alert1.TabIndex = 104;
+            this.alert1.Visible = false;
             // 
             // RemovePerson
             // 
@@ -1547,6 +1663,7 @@
             this.addPersonMail.Name = "addPersonMail";
             this.addPersonMail.Size = new System.Drawing.Size(248, 32);
             this.addPersonMail.TabIndex = 66;
+            this.addPersonMail.Enter += new System.EventHandler(this.AddPersonMail_Enter);
             // 
             // moneyUnit
             // 
@@ -1574,6 +1691,7 @@
             this.addPersonAdress.Name = "addPersonAdress";
             this.addPersonAdress.Size = new System.Drawing.Size(260, 210);
             this.addPersonAdress.TabIndex = 68;
+            this.addPersonAdress.Enter += new System.EventHandler(this.AddPersonAdress_Enter);
             // 
             // label31
             // 
@@ -1597,6 +1715,7 @@
             this.addPersonPhone.Name = "addPersonPhone";
             this.addPersonPhone.Size = new System.Drawing.Size(260, 32);
             this.addPersonPhone.TabIndex = 67;
+            this.addPersonPhone.Enter += new System.EventHandler(this.AddPersonPhone_Enter);
             // 
             // label30
             // 
@@ -1680,6 +1799,7 @@
             this.addPersonSalary.Name = "addPersonSalary";
             this.addPersonSalary.Size = new System.Drawing.Size(217, 32);
             this.addPersonSalary.TabIndex = 65;
+            this.addPersonSalary.Enter += new System.EventHandler(this.AddPersonSalary_Enter);
             // 
             // deleteRole
             // 
@@ -1733,6 +1853,7 @@
             this.roleBox.Name = "roleBox";
             this.roleBox.Size = new System.Drawing.Size(248, 210);
             this.roleBox.TabIndex = 60;
+            this.roleBox.Enter += new System.EventHandler(this.RoleBox_Enter);
             // 
             // label14
             // 
@@ -1755,6 +1876,7 @@
             this.addPersonLastName.Name = "addPersonLastName";
             this.addPersonLastName.Size = new System.Drawing.Size(260, 32);
             this.addPersonLastName.TabIndex = 63;
+            this.addPersonLastName.Enter += new System.EventHandler(this.AddPersonLastName_Enter);
             // 
             // label11
             // 
@@ -1777,6 +1899,7 @@
             this.addPersonDepart.Name = "addPersonDepart";
             this.addPersonDepart.Size = new System.Drawing.Size(248, 32);
             this.addPersonDepart.TabIndex = 64;
+            this.addPersonDepart.Enter += new System.EventHandler(this.AddPersonDepart_Enter);
             // 
             // label12
             // 
@@ -1799,6 +1922,7 @@
             this.addPersonName.Name = "addPersonName";
             this.addPersonName.Size = new System.Drawing.Size(248, 32);
             this.addPersonName.TabIndex = 62;
+            this.addPersonName.Enter += new System.EventHandler(this.AddPersonName_Enter);
             // 
             // AddPersonLabel
             // 
@@ -2048,20 +2172,20 @@
             this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.productChart.Legends.Add(legend3);
+            chartArea6.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.productChart.Legends.Add(legend6);
             this.productChart.Location = new System.Drawing.Point(3, 275);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.productChart.Series.Add(series3);
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series";
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series6);
             this.productChart.Size = new System.Drawing.Size(499, 263);
             this.productChart.TabIndex = 14;
             this.productChart.TabStop = false;
@@ -2269,34 +2393,6 @@
             this.metroSetTabPage1.ThemeAuthor = "Narwin";
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.Transparent;
-            this.label59.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label59.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label59.Location = new System.Drawing.Point(196, -1);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(44, 21);
-            this.label59.TabIndex = 120;
-            this.label59.Text = "BETA";
-            // 
-            // refreshExchange
-            // 
-            this.refreshExchange.BackColor = System.Drawing.Color.Transparent;
-            this.refreshExchange.BackgroundImage = global::manageHub.Properties.Resources.baseline_refresh_white_24dp;
-            this.refreshExchange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.refreshExchange.FlatAppearance.BorderSize = 0;
-            this.refreshExchange.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.refreshExchange.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.refreshExchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshExchange.Location = new System.Drawing.Point(202, 198);
-            this.refreshExchange.Name = "refreshExchange";
-            this.refreshExchange.Size = new System.Drawing.Size(37, 16);
-            this.refreshExchange.TabIndex = 123;
-            this.refreshExchange.UseVisualStyleBackColor = false;
-            this.refreshExchange.Click += new System.EventHandler(this.RefreshExchange_Click);
             // 
             // DashBoardForm
             // 
@@ -2519,5 +2615,13 @@
         private System.Windows.Forms.Label bitcoinToEuro;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button refreshExchange;
+        private System.Windows.Forms.Panel alert1;
+        private System.Windows.Forms.Panel alert2;
+        private System.Windows.Forms.Panel alert3;
+        private System.Windows.Forms.Panel alertRoles;
+        private System.Windows.Forms.Panel alert6;
+        private System.Windows.Forms.Panel alertPhone;
+        private System.Windows.Forms.Panel alert4;
+        private System.Windows.Forms.Panel alert5;
     }
 }

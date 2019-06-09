@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -203,6 +203,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.metroSetTabPage1 = new MetroSet_UI.Child.MetroSetTabPage();
+            this.alertMoneyUnit = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -1493,6 +1494,7 @@
             // ManagePersonnels
             // 
             this.ManagePersonnels.BaseColor = System.Drawing.Color.White;
+            this.ManagePersonnels.Controls.Add(this.alertMoneyUnit);
             this.ManagePersonnels.Controls.Add(this.alertRoles);
             this.ManagePersonnels.Controls.Add(this.alert6);
             this.ManagePersonnels.Controls.Add(this.alertPhone);
@@ -1679,6 +1681,7 @@
             this.moneyUnit.Size = new System.Drawing.Size(37, 32);
             this.moneyUnit.TabIndex = 99;
             this.moneyUnit.TabStop = false;
+            this.moneyUnit.Enter += new System.EventHandler(this.MoneyUnit_Enter);
             // 
             // addPersonAdress
             // 
@@ -2172,20 +2175,20 @@
             this.productChart.BorderSkin.BackColor = System.Drawing.Color.Empty;
             this.productChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.productChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.productChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.productChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.productChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.productChart.Legends.Add(legend2);
             this.productChart.Location = new System.Drawing.Point(3, 275);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.productChart.Series.Add(series6);
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.productChart.Series.Add(series2);
             this.productChart.Size = new System.Drawing.Size(499, 263);
             this.productChart.TabIndex = 14;
             this.productChart.TabStop = false;
@@ -2393,6 +2396,15 @@
             this.metroSetTabPage1.ThemeAuthor = "Narwin";
             this.metroSetTabPage1.ThemeName = "MetroLite";
             this.metroSetTabPage1.ToolTipText = null;
+            // 
+            // alertMoneyUnit
+            // 
+            this.alertMoneyUnit.BackColor = System.Drawing.Color.Red;
+            this.alertMoneyUnit.Location = new System.Drawing.Point(744, 180);
+            this.alertMoneyUnit.Name = "alertMoneyUnit";
+            this.alertMoneyUnit.Size = new System.Drawing.Size(37, 2);
+            this.alertMoneyUnit.TabIndex = 107;
+            this.alertMoneyUnit.Visible = false;
             // 
             // DashBoardForm
             // 
@@ -2623,5 +2635,6 @@
         private System.Windows.Forms.Panel alertPhone;
         private System.Windows.Forms.Panel alert4;
         private System.Windows.Forms.Panel alert5;
+        private System.Windows.Forms.Panel alertMoneyUnit;
     }
 }

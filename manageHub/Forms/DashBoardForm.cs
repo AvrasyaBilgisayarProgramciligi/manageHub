@@ -935,7 +935,7 @@ namespace manageHub
 
             if (myTextBoxes[0].Text.ToString().Trim().Equals("") || myTextBoxes[1].Text.ToString().Trim().Equals("") || myTextBoxes[2].Text.ToString().Trim().Equals("") ||
                 myTextBoxes[3].Text.ToString().Trim().Equals("") || myTextBoxes[4].Text.ToString().Trim().Equals("") || myTextBoxes[5].Text.ToString().Trim().Equals("")
-                || roleBox.CheckedItems.Count < 1 || addPersonPhone.Text.ToString().Trim().Equals(""))
+                || roleBox.CheckedItems.Count < 1 || addPersonPhone.Text.ToString().Trim().Equals("") || moneyUnit.SelectedIndex == -1)
             {
                 for(int i = 0; i < myTextBoxes.Count; i++)
                 {
@@ -953,6 +953,11 @@ namespace manageHub
                 if(roleBox.CheckedItems.Count < 1)
                 {
                     alertRoles.Visible = true;
+                }
+
+                if(moneyUnit.SelectedIndex == -1)
+                {
+                    alertMoneyUnit.Visible = true;
                 }
 
                 MessageBox.Show("Boxes cannot be left blank", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1013,6 +1018,11 @@ namespace manageHub
         private void AddPersonDepart_Enter(object sender, EventArgs e)
         {
             alert3.Visible = false;
+        }
+
+        private void MoneyUnit_Enter(object sender, EventArgs e)
+        {
+            alertMoneyUnit.Visible = false;
         }
 
         private void AddPersonSalary_Enter(object sender, EventArgs e)
